@@ -5,8 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="500"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+
+
+
     <Grid>
-        
+
+        <Grid x:Name="Menu" MouseDown="Menu_MouseDown">
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFB4B4B4" Offset="0.941"/>
+                    <GradientStop Color="#FF611981" Offset="0.978"/>
+                    <GradientStop Color="#00611981" Offset="1"/>
+                    <GradientStop x:Name="ColorCirkle" Color="#7F434343" Offset="0.99"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Add"  Style="{StaticResource Button1}" Grid.Column="3" Margin="0,41,51,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="1" RenderTransformOrigin="0.784,1.041" Background="#FF716E6E">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Delete"  Style="{StaticResource Button1}" Grid.Column="1" Margin="89,30,87,21" Grid.ColumnSpan="2" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Zip"  Style="{StaticResource Button1}" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" RenderTransformOrigin="1,0.973" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#FF716E6E">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Unzip"  Style="{StaticResource Button1}" Margin="51,41,0,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" RenderTransformOrigin="0.149,0.986" Grid.Row="1" Background="#FF716E6E">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Info"  Style="{StaticResource Button1}" Grid.Column="2" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#FF716E6E">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                </Button.OpacityMask>
+            </Button>
+
+            <Grid x:Name="Exit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="10">
+                <Grid.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF171717" Offset="0.853"/>
+                        <GradientStop Offset="1"/>
+                        <GradientStop Color="#FF611981" Offset="0.996"/>
+                    </RadialGradientBrush>
+                </Grid.Background>
+                <Button x:Name="ButtonExit" Margin="45,45,45,45" Style="{StaticResource Button1}" Click="ButtonExit_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Images/molk.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
