@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="500"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+
+
+
     <Grid>
-        
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFB4B4B4" Offset="0.941"/>
+                <GradientStop Color="#FF611981" Offset="0.978"/>
+                <GradientStop Color="#00611981" Offset="1"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Grid x:Name="Menu" MouseDown="Menu_MouseDown">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="Exit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="8,10,12,10" MouseDown="Exit_MouseDown">
+                <Grid.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF171717" Offset="0.853"/>
+                        <GradientStop Offset="1"/>
+                        <GradientStop Color="#FF611981" Offset="0.996"/>
+                    </RadialGradientBrush>
+                </Grid.Background>
+                <Button Margin="45,45,45,45" BorderBrush="#00707070">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Images/molk.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

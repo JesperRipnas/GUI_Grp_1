@@ -24,5 +24,22 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                DragMove();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
