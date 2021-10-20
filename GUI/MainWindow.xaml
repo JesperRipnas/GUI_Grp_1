@@ -38,27 +38,27 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Add"  Style="{StaticResource Button1}" Grid.Column="3" Margin="0,41,51,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="1" RenderTransformOrigin="0.784,1.041">
+            <Button x:Name="Add"  Style="{StaticResource Button1}" Grid.Column="3" Margin="0,41,51,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="1" RenderTransformOrigin="0.784,1.041" Background="#FF716E6E">
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                 </Button.OpacityMask>
             </Button>
-            <Button x:Name="Delete"  Style="{StaticResource Button1}" Grid.Column="1" Margin="89,30,87,21" Grid.ColumnSpan="2" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+            <Button x:Name="Delete"  Style="{StaticResource Button1}" Grid.Column="1" Margin="89,30,87,21" Grid.ColumnSpan="2" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E">
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                 </Button.OpacityMask>
             </Button>
-            <Button x:Name="Zip"  Style="{StaticResource Button1}" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" RenderTransformOrigin="1,0.973" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Button x:Name="Zip"  Style="{StaticResource Button1}" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" RenderTransformOrigin="1,0.973" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#FF716E6E">
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                 </Button.OpacityMask>
             </Button>
-            <Button x:Name="Unzip"  Style="{StaticResource Button1}" Margin="51,41,0,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" RenderTransformOrigin="0.149,0.986" Grid.Row="1">
+            <Button x:Name="Unzip"  Style="{StaticResource Button1}" Margin="51,41,0,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" RenderTransformOrigin="0.149,0.986" Grid.Row="1" Background="#FF716E6E">
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                 </Button.OpacityMask>
             </Button>
-            <Button x:Name="Info"  Style="{StaticResource Button1}" Grid.Column="2" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" RenderTransformOrigin="0.365,0.581">
+            <Button x:Name="Info"  Style="{StaticResource Button1}" Grid.Column="2" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#FF716E6E">
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                 </Button.OpacityMask>
