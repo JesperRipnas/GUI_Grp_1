@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:GUI="clr-namespace:GUI"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500"
@@ -38,32 +39,42 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Add"  Style="{StaticResource Button1}" Grid.Column="3" Margin="0,41,51,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="1" RenderTransformOrigin="0.784,1.041" Background="#FF716E6E">
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
-                </Button.OpacityMask>
-            </Button>
-            <Button x:Name="Delete"  Style="{StaticResource Button1}" Grid.Column="1" Margin="89,30,87,21" Grid.ColumnSpan="2" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E">
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
-                </Button.OpacityMask>
-            </Button>
-            <Button x:Name="Zip"  Style="{StaticResource Button1}" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" RenderTransformOrigin="1,0.973" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#FF716E6E">
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
-                </Button.OpacityMask>
-            </Button>
-            <Button x:Name="Unzip"  Style="{StaticResource Button1}" Margin="51,41,0,10" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" RenderTransformOrigin="0.149,0.986" Grid.Row="1" Background="#FF716E6E">
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
-                </Button.OpacityMask>
-            </Button>
-            <Button x:Name="Info"  Style="{StaticResource Button1}" Grid.Column="2" Margin="89,97,87,79" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#FF716E6E">
-                <Button.OpacityMask>
-                    <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
-                </Button.OpacityMask>
-            </Button>
-
+            <Grid x:Name="RadialBox" Grid.ColumnSpan="4" Grid.RowSpan="4" Grid.Column="0" Grid.Row="0" Margin="20">
+                <GUI:RadialPanel x:Name="PieMenu" 
+                                 OuterRadius="230" 
+                                 InnerRadius="125" 
+                                 StartAngle="0"                                              
+                                 Angle="360" 
+                                 IsClockwise="True" 
+                                 ShowBorder="False" 
+                                 ShowPieLines="True">
+                    <Button x:Name="Add"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="Delete"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="Zip"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="Unzip"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="Info"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                        </Button.OpacityMask>
+                    </Button>
+                </GUI:RadialPanel>
+            </Grid>
             <Grid x:Name="Exit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="10">
                 <Grid.Background>
                     <RadialGradientBrush>
