@@ -103,5 +103,8 @@
   <ItemGroup>
     <Resource Include="Resources\Images\molk.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\plus-pngrepo-com.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
