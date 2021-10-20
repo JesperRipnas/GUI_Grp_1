@@ -37,7 +37,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Grid x:Name="Exit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="8,10,12,10" MouseDown="Exit_MouseDown">
+            <Grid x:Name="Exit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="10" MouseDown="Exit_MouseDown">
                 <Grid.Background>
                     <RadialGradientBrush>
                         <GradientStop Color="#FF171717" Offset="0.853"/>
@@ -45,7 +45,7 @@
                         <GradientStop Color="#FF611981" Offset="0.996"/>
                     </RadialGradientBrush>
                 </Grid.Background>
-                <Button Margin="45,45,45,45" BorderBrush="#00707070">
+                <Button x:Name="ButtonExit" Margin="45,45,45,45" Style="{StaticResource Button1}">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Images/molk.png"/>
                     </Button.Background>
