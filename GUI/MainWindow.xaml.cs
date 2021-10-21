@@ -13,6 +13,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
 
 namespace GUI
 {
@@ -82,6 +84,29 @@ namespace GUI
             Storyboard.SetTargetName(anim, "ColorCirkle");
             Storyboard.SetTargetProperty(anim, new PropertyPath(GradientStop.ColorProperty));
             return anim;
+        }
+        private void btn_unzip(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openExplorer = new OpenFileDialog();
+            openExplorer.Filter = "Molk files (*.Molk) | *.molk";
+            openExplorer.Multiselect = true;
+            openExplorer.InitialDirectory = @"c:\";
+            openExplorer.ShowDialog();
+        }
+
+        private void btn_zip(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openExplorer = new OpenFileDialog();
+            openExplorer.Filter = "All files (*.*)|*.*";
+            openExplorer.Multiselect = true;
+            openExplorer.InitialDirectory = @"c:\";
+            openExplorer.ShowDialog();
+
+            string filestring = "";
+            foreach (string s in openExplorer.FileNames)
+            {
+                filestring += ' ' + s;
+            }
         }
     }
 }
