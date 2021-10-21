@@ -43,39 +43,39 @@
                 <GUI:RadialPanel x:Name="PieMenu" 
                                  OuterRadius="230" 
                                  InnerRadius="125" 
-                                 StartAngle="0"                                              
+                                 StartAngle="180"                                              
                                  Angle="360" 
                                  IsClockwise="True" 
                                  ShowBorder="False" 
                                  ShowPieLines="True">
-                    <Button x:Name="Add"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Delete"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Add" ToolTip="Add files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Zip"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Unzip" ToolTip="UnMölk file" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Unzip"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Zip" ToolTip="Mölk files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Info"  Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Preferences" ToolTip="Preferences" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
                 </GUI:RadialPanel>
             </Grid>
-            <Grid x:Name="Exit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="10">
+            <Grid x:Name="TempExit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="10">
                 <Grid.Background>
                     <RadialGradientBrush>
                         <GradientStop Color="#FF171717" Offset="0.853"/>
