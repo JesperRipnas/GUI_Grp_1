@@ -39,6 +39,11 @@ namespace GUI
 
             }
         }
+        private void ButtonPref_Click(object sender, RoutedEventArgs e)
+        {
+            PrefWindow win2 = new PrefWindow();
+            win2.Show();
+        }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {

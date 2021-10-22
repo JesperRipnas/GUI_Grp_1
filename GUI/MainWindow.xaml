@@ -68,7 +68,7 @@
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Preferences" ToolTip="Preferences" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Preferences" ToolTip="Preferences" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50" Click="ButtonPref_Click">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
