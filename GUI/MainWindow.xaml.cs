@@ -23,9 +23,13 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Declare Molka object
+        Molka molka;
+
         public MainWindow()
         {
             InitializeComponent();
+            molka = new Molka();
         }
 
         private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
