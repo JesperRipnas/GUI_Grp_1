@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -23,6 +24,9 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> filestring = new List<string>();
+        public string Fs { get; set; }
+
         // Declare Molka object
         Molka molka;
 
@@ -96,8 +100,14 @@ namespace GUI
             openExplorer.Multiselect = true;
             openExplorer.InitialDirectory = @"c:\";
             openExplorer.ShowDialog();
-        }
 
+            foreach (string s in openExplorer.FileNames)
+            {
+                filestring.Add(s);
+            }
+            Fs = string.Join(" ", filestring);
+            MessageBox.Show(Fs);
+        }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openExplorer = new OpenFileDialog();
@@ -106,11 +116,12 @@ namespace GUI
             openExplorer.InitialDirectory = @"c:\";
             openExplorer.ShowDialog();
 
-            string filestring = "";
             foreach (string s in openExplorer.FileNames)
             {
-                filestring += ' ' + s;
+                filestring.Add(s);
             }
+            Fs = string.Join(" ", filestring);
+            MessageBox.Show(Fs);
         }
     }
 }
