@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -23,6 +24,11 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        List<string> filestring = new List<string>();
+        public string Fs { get; set; }
+        Debug.WriteLine(Fs);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -107,11 +113,14 @@ namespace GUI
             openExplorer.InitialDirectory = @"c:\";
             openExplorer.ShowDialog();
 
-            string filestring = "";
+           
             foreach (string s in openExplorer.FileNames)
             {
-                filestring += ' ' + s;
+                filestring.Add(s);
             }
+
+            Fs = string.Join(" ", filestring);
+            
         }
     }
 }
