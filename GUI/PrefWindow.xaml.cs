@@ -44,21 +44,18 @@ namespace GUI
         {
             
         }
-        private void CheckBox(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void ChecBox7(object sender, RoutedEventArgs e)
-        {
-            
-        }
         private void DelEntZipFile(object sender, RoutedEventArgs e)
         {
             
         }
-        private void Close(object sender, RoutedEventArgs e)
+        private void Cancel(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            
         }
 
     }
