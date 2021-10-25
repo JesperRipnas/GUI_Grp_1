@@ -27,7 +27,7 @@ namespace GUI
 
         List<string> filestring = new List<string>();
         public string Fs { get; set; }
-        Debug.WriteLine(Fs);
+
 
         public MainWindow()
         {
@@ -120,7 +120,7 @@ namespace GUI
             }
 
             Fs = string.Join(" ", filestring);
-            
+            Debug.WriteLine(Fs);
         }
     }
 }
