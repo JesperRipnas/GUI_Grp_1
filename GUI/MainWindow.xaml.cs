@@ -106,13 +106,12 @@ namespace GUI
             openExplorer.InitialDirectory = @"c:\";
             openExplorer.ShowDialog();
 
-            foreach (var s in openExplorer.FileNames)
+            foreach (string s in openExplorer.FileNames)
             {
                 Filestrings.Add(new Filer(s));
                 MessageBox.Show(s);
             }
-            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
-            
+            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));         
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
@@ -127,7 +126,6 @@ namespace GUI
                 Filestrings.Add(new Filer(s));
                 MessageBox.Show(s);
             }
-
             finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
             //MessageBox.Show(finalString);
         }

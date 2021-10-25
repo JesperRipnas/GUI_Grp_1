@@ -13,11 +13,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         >
-
-
-
     <Grid>
-
         <Grid x:Name="Menu" MouseDown="Menu_MouseDown">
             <Grid.Background>
                 <RadialGradientBrush>
@@ -48,12 +44,12 @@
                                  IsClockwise="True" 
                                  ShowBorder="False" 
                                  ShowPieLines="True">
-                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="ButtonExit_Click" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Add" ToolTip="Add files" Click="Files_Click" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Files" ToolTip="Scope files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Files_Click"  Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
