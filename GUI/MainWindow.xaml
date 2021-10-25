@@ -53,7 +53,7 @@
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Add" ToolTip="Add files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Add" ToolTip="Add files" Click="Files_Click" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
@@ -89,6 +89,7 @@
                     </Button.Background>
                 </Button>
             </Grid>
+            <TextBox Grid.ColumnSpan="10" Grid.RowSpan="10" x:Name="FileWindow" HorizontalAlignment="Center" Width="400" Height="100" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Visibility="Collapsed" IsReadOnly="True" Opacity="0.90" Background="White" BorderBrush="Black" BorderThickness="2" FontSize="10"/>
         </Grid>
     </Grid>
 </Window>
