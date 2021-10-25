@@ -63,13 +63,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PrefWindow.xaml.cs">
-      <DependentUpon>PrefWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Classes\Molka.cs" />
     <Compile Include="RadialPanel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrefWindow.xaml.cs">
+      <DependentUpon>PrefWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="PrefWindow.xaml">
       <SubType>Designer</SubType>
@@ -102,17 +103,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Resources\Data\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\molk.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\plus-pngrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\molk.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Data\unmolk.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
