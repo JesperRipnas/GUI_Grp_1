@@ -13,11 +13,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         >
-
-
-
     <Grid>
-
         <Grid x:Name="Menu" MouseDown="Menu_MouseDown">
             <Grid.Background>
                 <RadialGradientBrush>
@@ -48,29 +44,29 @@
                                  IsClockwise="True" 
                                  ShowBorder="False" 
                                  ShowPieLines="True">
-                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="ButtonExit_Click" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
-                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Resources/Images/door-open-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Add" ToolTip="Add files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Files" ToolTip="Scope files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Files_Click"  Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
-                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Resources/Images/plus-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Unzip" ToolTip="UnMölk file" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50" Click="btn_unzip">
+                    <Button x:Name="Unzip" ToolTip="UnMölk file" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Click="btn_unzip" Margin="-31,0,-37,0">
                         <Button.OpacityMask>
-                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Resources/Images/box-open-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
                     <Button x:Name="Zip" ToolTip="Mölk files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50" Click="btn_zip">
                         <Button.OpacityMask>
-                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Resources/Images/box-archive-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
                     <Button x:Name="Preferences" ToolTip="Preferences" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Width="50" Click="ButtonPref_Click">
                         <Button.OpacityMask>
-                            <ImageBrush ImageSource="Resources/Images/plus-pngrepo-com.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Resources/Images/gear-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
                 </GUI:RadialPanel>
@@ -89,6 +85,7 @@
                     </Button.Background>
                 </Button>
             </Grid>
+            <TextBox Grid.ColumnSpan="10" Grid.RowSpan="10" x:Name="FileWindow" HorizontalAlignment="Center" Width="400" Height="100" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Visibility="Collapsed" IsReadOnly="True" Opacity="0.90" Background="White" BorderBrush="Black" BorderThickness="2" FontSize="10"/>
         </Grid>
     </Grid>
 </Window>

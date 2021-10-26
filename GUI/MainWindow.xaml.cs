@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
+using GUI.Classes;
 
 namespace GUI
 {
@@ -23,9 +25,15 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Filer> Filestrings = new List<Filer>();
+        public string finalString { get; set; }
+        // Declare Molka object
+        Molka molka;
+
         public MainWindow()
         {
             InitializeComponent();
+            molka = new Molka();
         }
 
         private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
@@ -97,8 +105,14 @@ namespace GUI
             openExplorer.Multiselect = true;
             openExplorer.InitialDirectory = @"c:\";
             openExplorer.ShowDialog();
-        }
 
+            foreach (string s in openExplorer.FileNames)
+            {
+                Filestrings.Add(new Filer(s));
+                MessageBox.Show(s);
+            }
+            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));         
+        }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openExplorer = new OpenFileDialog();
@@ -107,10 +121,28 @@ namespace GUI
             openExplorer.InitialDirectory = @"c:\";
             openExplorer.ShowDialog();
 
-            string filestring = "";
             foreach (string s in openExplorer.FileNames)
             {
-                filestring += ' ' + s;
+                Filestrings.Add(new Filer(s));
+                MessageBox.Show(s);
+            }
+            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
+            //MessageBox.Show(finalString);
+        }
+        private void Files_Click(object sender, RoutedEventArgs e)
+        {
+            FileWindow.Text = finalString;
+            ShowFiles();
+        }
+        public void ShowFiles()
+        {
+            if (FileWindow.Visibility != Visibility.Visible)
+            {
+                FileWindow.Visibility = Visibility.Visible;
+            }
+            else if (FileWindow.Visibility == Visibility.Visible)
+            {
+                FileWindow.Visibility = Visibility.Collapsed;
             }
         }
     }

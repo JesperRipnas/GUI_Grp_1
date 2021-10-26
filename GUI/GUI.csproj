@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -63,13 +63,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PrefWindow.xaml.cs">
-      <DependentUpon>PrefWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Classes\Filer.cs" />
+    <Compile Include="Classes\Molka.cs" />
     <Compile Include="RadialPanel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrefWindow.xaml.cs">
+      <DependentUpon>PrefWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="PrefWindow.xaml">
       <SubType>Designer</SubType>
@@ -103,10 +105,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Resources\Data\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <Resource Include="Resources\Images\Cogwheel.ico" />
+    <Resource Include="Resources\Images\box-archive-solid.png" />
+    <Resource Include="Resources\Images\box-open-solid.png" />
+    <Resource Include="Resources\Images\door-open-solid.png" />
+    <Resource Include="Resources\Images\gear-solid.png" />
+    <Resource Include="Resources\Images\plus-solid.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\molk.png" />
@@ -115,7 +119,12 @@
     <Resource Include="Resources\Images\plus-pngrepo-com.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Cogwheel.ico" />
+    <Resource Include="Resources\Data\molk.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Data\unmolk.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
