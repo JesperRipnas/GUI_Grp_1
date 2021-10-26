@@ -103,7 +103,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\box-archive-solid.png" />
+    <Resource Include="Resources\Images\box-open-solid.png" />
+    <Resource Include="Resources\Images\door-open-solid.png" />
+    <Resource Include="Resources\Images\gear-solid.png" />
+    <Resource Include="Resources\Images\plus-solid.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\molk.png" />
   </ItemGroup>
