@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="PrefWindow" Height="450" Width="800">
+        Background="#FFB4B4B4"
+        Title="Preferences" Height="450" Width="800" Icon="/Resources/Images/Cogwheel.ico">
+    
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2.5*" />
@@ -22,15 +25,16 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
-            
+
         </Grid.RowDefinitions>
-        <CheckBox Checked="FastCompress">Faster Compress</CheckBox>
-        <CheckBox Grid.Column="1" Grid.Row="0" Checked="InclSysHidFile">Include system and hidden files</CheckBox>
-        <CheckBox Grid.Column="0" Grid.Row="2" Checked="QuietOperation">Quiet operation</CheckBox>
-        <CheckBox Grid.Row="1" Checked="CompressBetter">Compress better</CheckBox>
-        <CheckBox Grid.Column="1" Grid.Row="1" Checked="StoreOnly">Store only</CheckBox>
-        <CheckBox Grid.Column="1" Grid.Row="2" Checked="DelEntZipFile">Delete entries in zip file</CheckBox>
-        <Button Grid.Column="5" Grid.Row="4" Click="Cancel">Cancel</Button>
-        <Button Grid.Column="6" Grid.Row="4">Save and close</Button>
+
+        <CheckBox Checked="FastCompress" Foreground="#5f2383">Faster Compress</CheckBox>
+        <CheckBox Grid.Column="1" Grid.Row="0" Checked="InclSysHidFile" Foreground="#5f2383">Include system and hidden files</CheckBox>
+        <CheckBox Grid.Column="0" Grid.Row="2" Checked="QuietOperation" Foreground="#5f2383">Quiet operation</CheckBox>
+        <CheckBox Grid.Row="1" Checked="CompressBetter" Foreground="#5f2383">Compress better</CheckBox>
+        <CheckBox Grid.Column="1" Grid.Row="1" Checked="StoreOnly" Foreground="#5f2383">Store only</CheckBox>
+        <CheckBox Grid.Column="1" Grid.Row="2" Checked="DelEntZipFile" Foreground="#5f2383">Delete entries in zip file</CheckBox>
+        <Button Grid.Column="5" Grid.Row="4" Click="Cancel" BorderBrush="#d25517" Background="#FF611981" Foreground="#d25517" >Cancel</Button>
+        <Button Grid.Column="6" Grid.Row="4" BorderBrush="#d25517" Background="#FF611981" Foreground="#d25517" >Save and close</Button>
     </Grid>
 </Window>
