@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
+using GUI.Classes;
 
 namespace GUI
 {
@@ -24,9 +25,8 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> filestring = new List<string>();
-        public string Fs { get; set; }
-
+        List<Filer> Filestrings = new List<Filer>();
+        public string finalString { get; set; }
         // Declare Molka object
         Molka molka;
 
@@ -108,10 +108,10 @@ namespace GUI
 
             foreach (string s in openExplorer.FileNames)
             {
-                filestring.Add(s);
+                Filestrings.Add(new Filer(s));
+                MessageBox.Show(s);
             }
-            Fs = string.Join(" ", filestring);
-            MessageBox.Show(Fs);
+            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));         
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
@@ -123,10 +123,27 @@ namespace GUI
 
             foreach (string s in openExplorer.FileNames)
             {
-                filestring.Add(s);
+                Filestrings.Add(new Filer(s));
+                MessageBox.Show(s);
             }
-            Fs = string.Join(" ", filestring);
-            MessageBox.Show(Fs);
+            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
+            //MessageBox.Show(finalString);
+        }
+        private void Files_Click(object sender, RoutedEventArgs e)
+        {
+            FileWindow.Text = finalString;
+            ShowFiles();
+        }
+        public void ShowFiles()
+        {
+            if (FileWindow.Visibility != Visibility.Visible)
+            {
+                FileWindow.Visibility = Visibility.Visible;
+            }
+            else if (FileWindow.Visibility == Visibility.Visible)
+            {
+                FileWindow.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }
