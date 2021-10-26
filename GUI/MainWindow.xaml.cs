@@ -26,6 +26,11 @@ namespace GUI
     public partial class MainWindow : Window
     {
         List<Filer> Filestrings = new List<Filer>();
+
+        //WIP Maybe working, maybe not
+        public static List<File> molkFiles = new List<File>();
+
+        //
         public string finalString { get; set; }
         // Declare Molka object
         Molka molka;
@@ -115,19 +120,24 @@ namespace GUI
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openExplorer = new OpenFileDialog();
-            openExplorer.Filter = "All files (*.*)|*.*";
-            openExplorer.Multiselect = true;
-            openExplorer.InitialDirectory = @"c:\";
-            openExplorer.ShowDialog();
+            //OpenFileDialog openExplorer = new OpenFileDialog();
+            //openExplorer.Filter = "All files (*.*)|*.*";
+            //openExplorer.Multiselect = true;
+            //openExplorer.InitialDirectory = @"c:\";
+            //openExplorer.ShowDialog();
 
-            foreach (string s in openExplorer.FileNames)
-            {
-                Filestrings.Add(new Filer(s));
-                MessageBox.Show(s);
-            }
-            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
-            //MessageBox.Show(finalString);
+            //foreach (string s in openExplorer.FileNames)
+            //{
+            //    Filestrings.Add(new Filer(s));
+            //    MessageBox.Show(s);
+            //}
+            //finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
+            ////MessageBox.Show(finalString);
+            ///
+
+            MolkWindow mw = new MolkWindow();
+            mw.Show();
+
         }
         private void Files_Click(object sender, RoutedEventArgs e)
         {
@@ -144,6 +154,51 @@ namespace GUI
             {
                 FileWindow.Visibility = Visibility.Collapsed;
             }
+        }
+        public static void OpenExplorerMolkFiles() 
+        {
+            OpenFileDialog openExplorer = new OpenFileDialog();
+            openExplorer.Filter = "All files (*.*)|*.*";
+            openExplorer.Multiselect = true;
+            openExplorer.InitialDirectory = @"c:\";
+            openExplorer.ShowDialog();
+
+            try
+            {
+                if(openExplorer.FileNames != null && openExplorer.FileNames.Length != 0)
+                {
+                    foreach (string file in openExplorer.FileNames)
+                    {
+                        try
+                        {
+                            FileInfo fi = new FileInfo(file);
+                            molkFiles.Add(new File { 
+                                fileIndex = molkFiles.Count, 
+                                fileName = $"{fi.Name}", 
+                                fileSize = $"{fi.Length} bytes", 
+                                fileCreatedDate = $"{fi.CreationTime}", 
+                                fileExtension = $"{fi.Extension}",
+                                filePath = $"{fi.FullName}" });
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show(e.ToString());
+                            throw;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No files picked");
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+                throw;
+            }
+            MolkWindow mw = new MolkWindow();
+            mw.UpdateMolkListData();
         }
     }
 }
