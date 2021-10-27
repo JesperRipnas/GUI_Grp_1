@@ -24,39 +24,5 @@ namespace GUI
         {
             InitializeComponent();
         }
-        private void FastCompress(object sender, RoutedEventArgs e)
-        {            
-                    
-        }
-        private void InclSysHidFile(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void QuietOperation(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void CompressBetter(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void StoreOnly(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void DelEntZipFile(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void Cancel(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void Save(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
     }
 }

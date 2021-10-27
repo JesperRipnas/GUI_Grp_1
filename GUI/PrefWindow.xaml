@@ -5,36 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Background="#FFB4B4B4"
-        Title="Preferences" Height="450" Width="800" Icon="/Resources/Images/Cogwheel.ico">
-    
-    <Grid>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2.5*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-
-        </Grid.RowDefinitions>
-
-        <CheckBox Checked="FastCompress" Foreground="#5f2383">Faster Compress</CheckBox>
-        <CheckBox Grid.Column="1" Grid.Row="0" Checked="InclSysHidFile" Foreground="#5f2383">Include system and hidden files</CheckBox>
-        <CheckBox Grid.Column="0" Grid.Row="2" Checked="QuietOperation" Foreground="#5f2383">Quiet operation</CheckBox>
-        <CheckBox Grid.Row="1" Checked="CompressBetter" Foreground="#5f2383">Compress better</CheckBox>
-        <CheckBox Grid.Column="1" Grid.Row="1" Checked="StoreOnly" Foreground="#5f2383">Store only</CheckBox>
-        <CheckBox Grid.Column="1" Grid.Row="2" Checked="DelEntZipFile" Foreground="#5f2383">Delete entries in zip file</CheckBox>
-        <Button Grid.Column="5" Grid.Row="4" Click="Cancel" BorderBrush="#d25517" Background="#FF611981" Foreground="#d25517" >Cancel</Button>
-        <Button Grid.Column="6" Grid.Row="4" BorderBrush="#d25517" Background="#FF611981" Foreground="#d25517" >Save and close</Button>
-    </Grid>
+        Background="#5f2383"
+        Title="Preferences" Height="400" Width="350" Icon="/Resources/Images/Cogwheel.ico">
+    <TabControl HorizontalAlignment="Left" Height="305" Margin="0,1,0,0" VerticalAlignment="Top" Width="340">
+        <TabItem Header="General">
+            <Grid Background="#FFF">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="85*"/>
+                    <ColumnDefinition Width="249*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Compression">
+            <Grid Background="#FFF" Margin="0,7,0,-7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="29*"/>
+                    <ColumnDefinition Width="305*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Paths">
+            <Grid Background="#FFF" Margin="0,7,0,-5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="29*"/>
+                    <ColumnDefinition Width="305*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </Window>
+    
+    
