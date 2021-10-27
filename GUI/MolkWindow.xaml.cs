@@ -63,5 +63,10 @@ namespace GUI
                 }
             }
         }
+        private void RemoveItem_Press(object sender, RoutedEventArgs e)
+        {
+            MainWindow.molkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
+        }
+
     }
 }
