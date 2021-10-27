@@ -8,6 +8,6 @@ namespace GUI
 {
     public class GeneralError
     {
-        public static readonly string fileAlreadyExist = "File already exists in the list, cannot add it twice";
+        public static readonly string fileAlreadyExist = "File already exists, cannot add it twice";
     }
 }

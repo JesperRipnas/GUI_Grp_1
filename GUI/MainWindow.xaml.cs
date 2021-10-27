@@ -174,15 +174,23 @@ namespace GUI
                         {
                             FileInfo fi = new FileInfo(file);
 
-                            molkFiles.Add(new MolkFile
+                            // Check if file already exists in list
+                            if(molkFiles.Any(x => x.filePath == fi.FullName))
                             {
-                                fileIndex = molkFiles.Count,
-                                fileName = $"{fi.Name}",
-                                fileSize = $"{fi.Length} bytes",
-                                fileCreatedDate = $"{fi.CreationTime}",
-                                fileExtension = $"{fi.Extension}",
-                                filePath = $"{fi.FullName}"
-                            });
+                                MessageBox.Show(GeneralError.fileAlreadyExist + "\n" + "File: " + fi.Name);
+                            } 
+                            else
+                            {
+                                molkFiles.Add(new MolkFile
+                                {
+                                    fileIndex = molkFiles.Count,
+                                    fileName = $"{fi.Name}",
+                                    fileSize = $"{fi.Length} bytes",
+                                    fileCreatedDate = $"{fi.CreationTime}",
+                                    fileExtension = $"{fi.Extension}",
+                                    filePath = $"{fi.FullName}"
+                                });
+                            }
                         }
                         catch (Exception e)
                         {
