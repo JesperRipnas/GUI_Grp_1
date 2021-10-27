@@ -18,6 +18,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using GUI.Classes;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace GUI
 {
@@ -32,14 +33,15 @@ namespace GUI
         public static ObservableCollection<MolkFile> molkFiles = new ObservableCollection<MolkFile>();
 
         //
-        public string finalString { get; set; }
+        public static string finalString { get; set; }
         // Declare Molka object
         Molka molka;
-
+        public static string defaultOutString { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             molka = new Molka();
+            defaultOutString = molka.GetDefaultOutputPath();
         }
 
         private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
@@ -56,7 +58,7 @@ namespace GUI
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
             PrefWindow win2 = new PrefWindow();
-            win2.Show();
+            win2.ShowDialog();
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
@@ -122,30 +124,31 @@ namespace GUI
                 Filestrings.Add(new Filer(s));
                 MessageBox.Show(s);
             }
-            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));         
+            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
             MolkWindow mw = new MolkWindow();
-            mw.Show();
+            mw.ShowDialog();
         }
-        private void Files_Click(object sender, RoutedEventArgs e)
+        private void Help_Click(object sender, RoutedEventArgs e)
         {
-            FileWindow.Text = finalString;
-            ShowFiles();
+            HelpWindow.Text = "THIS IS HELP";
+            ShowHelp();
         }
-        public void ShowFiles()
+
+        public void ShowHelp()
         {
-            if (FileWindow.Visibility != Visibility.Visible)
+            if (HelpWindow.Visibility != Visibility.Visible)
             {
-                FileWindow.Visibility = Visibility.Visible;
+                HelpWindow.Visibility = Visibility.Visible;
             }
-            else if (FileWindow.Visibility == Visibility.Visible)
+            else if (HelpWindow.Visibility == Visibility.Visible)
             {
-                FileWindow.Visibility = Visibility.Collapsed;
+                HelpWindow.Visibility = Visibility.Collapsed;
             }
         }
-        public static void OpenExplorerMolkFiles() 
+        public static void OpenExplorerMolkFiles()
         {
             OpenFileDialog openExplorer = new OpenFileDialog();
             openExplorer.Filter = "All files (*.*)|*.*";
@@ -155,7 +158,7 @@ namespace GUI
 
             try
             {
-                if(openExplorer.FileNames != null && openExplorer.FileNames.Length != 0)
+                if (openExplorer.FileNames != null && openExplorer.FileNames.Length != 0)
                 {
                     foreach (string file in openExplorer.FileNames)
                     {
@@ -167,7 +170,7 @@ namespace GUI
                             if(molkFiles.Any(x => x.filePath == fi.FullName))
                             {
                                 MessageBox.Show(GeneralError.fileAlreadyExist + "\n" + "File: " + fi.Name);
-                            } 
+                            }
                             else
                             {
                                 // Add file as a MolkFile to molkFiles list
@@ -178,8 +181,10 @@ namespace GUI
                                     fileSize = $"{fi.Length} bytes",
                                     fileCreatedDate = $"{fi.CreationTime}",
                                     fileExtension = $"{fi.Extension}",
-                                    filePath = $"{fi.FullName}"
+                                    filePath = $"\"{fi.FullName}\""
                                 });
+                                finalString = string.Join(" ", molkFiles.Select(x => x.filePath));
+                                Debug.WriteLine(finalString);
                             }
                         }
                         catch (Exception e)

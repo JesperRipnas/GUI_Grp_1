@@ -31,7 +31,7 @@
         <DataGrid Name="dtGrid" DataContext="{StaticResource ItemCollectionViewSource}" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="true"
             Margin="-1,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                
+
                 <DataGridTextColumn Header="Name"
                                 Binding="{Binding fileName}"
                                 Width="200"
@@ -78,6 +78,11 @@
         <Button x:Name="Exit" Style="{StaticResource Button2}" Grid.Row="2" Margin="0,84,460,0" Background="White" BorderThickness="0" Click="Btn_Close" ToolTip="Close" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
             <Button.OpacityMask>
                 <ImageBrush ImageSource="Resources/Images/door-open-solid-white.png"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="bruh" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="35.2,97,199.6,13" Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Width="Auto" Height="Auto">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="Resources/Images/Gear-solid.png" />
             </Button.OpacityMask>
         </Button>
         <Button x:Name="Throw" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="77,84,128,0" Background="White" BorderThickness="0" Click="Btn_ClearMolkList" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">

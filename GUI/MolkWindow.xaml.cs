@@ -37,15 +37,24 @@ namespace GUI
         {
             MainWindow.OpenExplorerMolkFiles();
         }
-
+        private void ButtonPref_Click(object sender, RoutedEventArgs e)
+        {
+            PrefWindow win2 = new PrefWindow();
+            win2.ShowDialog();
+        }
         private void Btn_Molk(object sender, RoutedEventArgs e)
         {
             if(MainWindow.molkFiles.Count > 0)
             {
+                Molka molka = new Molka();
+                string outPut = MainWindow.defaultOutString;
+                outPut = outPut + "\\archive2.molk";
+                molka.Molk(MainWindow.finalString, outPut);
                 //MÖLK
             }
             else
             {
+                
                 MessageBox.Show(GeneralError.needAtLeastOneFile,
                 "Error: Add file(s)",
                 MessageBoxButton.OK,
@@ -53,6 +62,7 @@ namespace GUI
                 );
             }
         }
+        
 
         Storyboard storyboard;
 
