@@ -64,6 +64,11 @@ namespace GUI
             Close();
         }
 
+        private void ButtonMolk_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://www.molk.com/");
+        }
+
         Storyboard storyboard;
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
