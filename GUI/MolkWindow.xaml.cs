@@ -31,9 +31,5 @@ namespace GUI
         {
             MainWindow.OpenExplorerMolkFiles();
         }
-        public void RefreshDataGrid()
-        {
-            dtGrid.Items.Refresh();
-        }
     }
 }

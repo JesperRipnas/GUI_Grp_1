@@ -173,7 +173,6 @@ namespace GUI
                         try
                         {
                             FileInfo fi = new FileInfo(file);
-                            MolkWindow mw = new MolkWindow();
 
                             molkFiles.Add(new MolkFile
                             {
@@ -184,7 +183,6 @@ namespace GUI
                                 fileExtension = $"{fi.Extension}",
                                 filePath = $"{fi.FullName}"
                             });
-                            mw.RefreshDataGrid();
                         }
                         catch (Exception e)
                         {
