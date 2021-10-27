@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Molk Files" Height="450" Width="800" Background="#5f2383">
+        Title="UnMolk Files" Height="450" Width="800" Background="#5f2383">
 
     <Window.Resources>
         <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
@@ -14,8 +14,8 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="529*" />
+            <ColumnDefinition Width="265*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                 Grid.ColumnSpan="2"
                 Orientation="Horizontal" Margin="0,84,0,4"/>
         <DataGrid Name="dtGrid" DataContext="{StaticResource ItemCollectionViewSource}" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="true"
-            Margin="-1,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            Margin="-1,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2" SelectionChanged="dtGrid_SelectionChanged">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Name"
@@ -75,29 +75,29 @@
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
         </Grid>
-        <Button x:Name="Exit" Style="{StaticResource Button2}" Grid.Row="2" Margin="0,84,460,0" Background="White" BorderThickness="0" Click="Btn_Close" ToolTip="Close" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+        <Button x:Name="Exit" Style="{StaticResource Button2}" Grid.Row="2" Margin="18,92,470,10" Background="White" BorderThickness="0" Click="Btn_Close" ToolTip="Close" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Height="Auto" Width="Auto">
             <Button.OpacityMask>
                 <ImageBrush ImageSource="Resources/Images/door-open-solid-white.png"/>
             </Button.OpacityMask>
         </Button>
-        <Button x:Name="bruh" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="35.2,97,199.6,13" Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Width="Auto" Height="Auto">
+        <Button x:Name="bruh" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="29,94,200,10" Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Width="Auto" Height="Auto">
             <Button.OpacityMask>
                 <ImageBrush ImageSource="Resources/Images/Gear-solid.png" />
             </Button.OpacityMask>
         </Button>
-        <Button x:Name="Throw" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="77,84,128,0" Background="White" BorderThickness="0" Click="Btn_ClearMolkList" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+        <Button x:Name="Throw" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="86,94,146,10" Background="White" BorderThickness="0" Click="Btn_ClearMolkList" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Width="Auto" Height="Auto">
             <Button.OpacityMask>
                 <ImageBrush ImageSource="Resources/Images/trashcan-solid-white.png" />
             </Button.OpacityMask>
         </Button>
-        <Button x:Name="Add" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="141,84,64,0" Background="White" BorderThickness="0" Click="Btn_AddFile" ToolTip="Add file(s)" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+        <Button x:Name="Add" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="156,97,79,10" Background="White" BorderThickness="0" Click="Btn_AddFile" ToolTip="Add file(s)" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Width="Auto" Height="Auto">
             <Button.OpacityMask>
                 <ImageBrush ImageSource="Resources/Images/plus-solid-white.png"  />
             </Button.OpacityMask>
         </Button>
-        <Button x:Name="Execute" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="205,84,0,0" Background="White" BorderThickness="0" Click="Btn_UnMolk" ToolTip="Mölk files" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+        <Button x:Name="Execute" Style="{StaticResource Button2}" Grid.Column="1" Grid.Row="2" Margin="210,92,15,10" Background="White" BorderThickness="0" Click="Btn_UnMolk" ToolTip="UnMölk files" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Width="Auto" Height="Auto">
             <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/Images/box-archive-solid-white.png" />
+                <ImageBrush ImageSource="Resources/Images/box-open-solid-white.png" />
             </Button.OpacityMask>
         </Button>
     </Grid>

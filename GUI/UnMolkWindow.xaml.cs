@@ -24,12 +24,13 @@ namespace GUI
         {
             InitializeComponent();
             CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = MainWindow.molkFiles;
+            itemCollectionViewSource = (CollectionViewSource)FindResource("ItemCollectionViewSource");
+            itemCollectionViewSource.Source = MainWindow.unMolkFiles;
         }
 
         private void Btn_Close(object sender, RoutedEventArgs e)
         {
+            MainWindow.unMolkFiles.Clear();
             this.Close();
         }
 
@@ -44,7 +45,7 @@ namespace GUI
         }
         private void Btn_UnMolk(object sender, RoutedEventArgs e)
         {
-            if (MainWindow.molkFiles.Count == 1)
+            if (MainWindow.unMolkFiles.Count == 1)
             {
                 Molka molka = new Molka();
                 string outPut = molka.GetDefaultOutputPath();
@@ -94,18 +95,22 @@ namespace GUI
 
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
-            if (MainWindow.molkFiles.Count > 0)
+            if (MainWindow.unMolkFiles.Count > 0)
             {
                 if (MessageBox.Show(GeneralError.confirmationRemoveFilesInList, "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    MainWindow.molkFiles.Clear();
+                    MainWindow.unMolkFiles.Clear();
                 }
             }
         }
         private void RemoveItem_Press(object sender, RoutedEventArgs e)
         {
-            MainWindow.molkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
+            MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
 
+        private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

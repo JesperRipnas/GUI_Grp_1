@@ -31,6 +31,7 @@ namespace GUI
 
         //WIP Maybe working, maybe not
         public static ObservableCollection<MolkFile> molkFiles = new ObservableCollection<MolkFile>();
+        public static ObservableCollection<MolkFile> unMolkFiles = new ObservableCollection<MolkFile>();
 
         //
         public static string finalString { get; set; }
@@ -211,23 +212,23 @@ namespace GUI
                             FileInfo fi = new FileInfo(file);
 
                             // Check if file already exists in list
-                            if (molkFiles.Any(x => x.filePath == fi.FullName))
+                            if (unMolkFiles.Any(x => x.filePath == fi.FullName))
                             {
                                 MessageBox.Show(GeneralError.fileAlreadyExist + "\n" + "File: " + fi.Name);
                             }
                             else
                             {
                                 // Add file as a MolkFile to molkFiles list
-                                molkFiles.Add(new MolkFile
+                                unMolkFiles.Add(new MolkFile
                                 {
-                                    fileIndex = molkFiles.Count,
+                                    fileIndex = unMolkFiles.Count,
                                     fileName = $"{fi.Name}",
                                     fileSize = $"{fi.Length} bytes",
                                     fileCreatedDate = $"{fi.CreationTime}",
                                     fileExtension = $"{fi.Extension}",
                                     filePath = $"\"{fi.FullName}\""
                                 });
-                                finalString = string.Join(" ", molkFiles.Select(x => x.filePath));
+                                finalString = string.Join(" ", unMolkFiles.Select(x => x.filePath));
                                 Debug.WriteLine(finalString);
                             }
                         }

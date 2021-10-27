@@ -24,12 +24,13 @@ namespace GUI
         {
             InitializeComponent();
             CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
+            itemCollectionViewSource = (CollectionViewSource)FindResource("ItemCollectionViewSource");
             itemCollectionViewSource.Source = MainWindow.molkFiles;
         }
 
         private void Btn_Close(object sender, RoutedEventArgs e)
         {
+            MainWindow.molkFiles.Clear();
             this.Close();
         }
 
