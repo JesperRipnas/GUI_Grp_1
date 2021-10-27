@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,16 +64,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Utils.cs" />
+    <Compile Include="Classes\Filehandler.cs" />
     <Compile Include="Classes\Filer.cs" />
     <Compile Include="Classes\Molka.cs" />
-    <Compile Include="RadialPanel.cs" />
+    <Compile Include="Classes\RadialPanel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MolkWindow.xaml.cs">
+      <DependentUpon>MolkWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrefWindow.xaml.cs">
       <DependentUpon>PrefWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="MolkWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrefWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +135,18 @@
     <Resource Include="Resources\Data\unmolk.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\plus-solid-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\box-archive-solid-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\door-open-solid-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\trashcan-solid-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

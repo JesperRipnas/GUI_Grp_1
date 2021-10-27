@@ -1,0 +1,85 @@
+﻿<Window x:Class="GUI.MolkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Molk Files" Height="450" Width="800" Background="#5f2383">
+
+    <Window.Resources>
+        <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal" Margin="0,84,0,4"/>
+        <DataGrid Name="dtGrid" DataContext="{StaticResource ItemCollectionViewSource}" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="true"
+            Margin="-1,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name"
+                                Binding="{Binding fileName}"
+                                Width="200"
+                                FontFamily="Times New Roman" />
+                <DataGridTextColumn Header="Type"
+                                Binding="{Binding fileExtension}"
+                                Width="50"
+                                FontFamily="Times New Roman" />
+                <DataGridTextColumn Header="Size"
+                                Binding="{Binding fileSize}"
+                                Width="100"
+                                FontFamily="Times New Roman" />
+                <DataGridTextColumn Header="Created"
+                                Binding="{Binding fileCreatedDate}"
+                                Width="125"
+                                FontFamily="Times New Roman" />
+                <DataGridTextColumn Header="Path"
+                                Binding="{Binding filePath}"
+                                Width="*"
+                                FontFamily="Times New Roman" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.ColumnSpan="2" Margin="0,87,0,4" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <Button Grid.Row="2" Margin="0,84,460,0" Background="#5f2383" BorderThickness="0" Click="Btn_Close" ToolTip="Close">
+            <StackPanel>
+                <Image Source="Resources/Images/door-open-solid-white.png" Height="30" Width="30" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="77,84,128,0" Background="#5f2383" BorderThickness="0" Click="Btn_ClearMolkList" ToolTip="Clear list">
+            <StackPanel>
+                <Image Source="Resources/Images/trashcan-solid-white.png" Height="30" Width="30" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="141,84,64,0" Background="#5f2383" BorderThickness="0" Click="Btn_AddFile" ToolTip="Add file(s)">
+            <StackPanel>
+                <Image Source="Resources/Images/plus-solid-white.png" Height="30" Width="30" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Margin="205,84,0,0" Background="#5f2383" BorderThickness="0" Click="Btn_Molk" ToolTip="Mölk files">
+            <StackPanel>
+                <Image Source="Resources/Images/box-archive-solid-white.png" Height="30" Width="30" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

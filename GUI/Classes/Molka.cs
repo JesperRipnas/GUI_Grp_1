@@ -84,5 +84,13 @@ namespace GUI
                 MessageBox.Show("Filepath doesn't contain .molk");
             }
         }
+        public string GetDefaultOutputPath()
+        {
+            return defaultOutputPath;
+        }
+        public void SetDefaultOutputPath(string output)
+        {
+            defaultOutputPath = output;
+        }
     }
 }
