@@ -46,7 +46,7 @@ namespace GUI
         {
             try
             {
-                molk.StartInfo.Arguments = $"{archiveNamePath} {filesToMolk}";
+                molk.StartInfo.Arguments = $"\"{archiveNamePath}\" {filesToMolk}";
                 molk.Start();
                 molk.WaitForExit();
             }

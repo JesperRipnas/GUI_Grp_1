@@ -41,7 +41,14 @@ namespace GUI
         {
             if(MainWindow.molkFiles.Count > 0)
             {
-                //MÖLK
+                Molka molka = new Molka();
+                string outPut = MainWindow.defaultOutString;
+                outPut = outPut + "\\archive.molk";
+                molka.Molk(MainWindow.finalString, outPut);
+                
+                // Specify target location
+                // Molk the files
+                // Done
             }
             else
             {

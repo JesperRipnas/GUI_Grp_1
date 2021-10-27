@@ -32,14 +32,16 @@ namespace GUI
         public static ObservableCollection<MolkFile> molkFiles = new ObservableCollection<MolkFile>();
 
         //
-        public string finalString { get; set; }
+        public static string finalString { get; set; }
         // Declare Molka object
         Molka molka;
+        public static string defaultOutString { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             molka = new Molka();
+            defaultOutString = molka.GetDefaultOutputPath();
         }
 
         private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
@@ -117,7 +119,7 @@ namespace GUI
                 Filestrings.Add(new Filer(s));
                 MessageBox.Show(s);
             }
-            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));         
+            // finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));         
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
@@ -173,8 +175,9 @@ namespace GUI
                                     fileSize = $"{fi.Length} bytes",
                                     fileCreatedDate = $"{fi.CreationTime}",
                                     fileExtension = $"{fi.Extension}",
-                                    filePath = $"{fi.FullName}"
+                                    filePath = $"\"{fi.FullName}\""
                                 });
+                                finalString = string.Join(" ", molkFiles.Select(x => x.filePath ));
                             }
                         }
                         catch (Exception e)
