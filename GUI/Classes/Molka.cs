@@ -65,12 +65,12 @@ namespace GUI
 
             // Validate that the file type is .molk
             // We should split this and check each element in case a multifile string is passed NIY
-            if (fileToUnMolk.ToLower().Contains(".molk")) 
+            if (fileToUnMolk.ToLower().Contains(".molk"))
             {
-                MessageBox.Show("Filepath contains .molk");
+                //MessageBox.Show("Filepath contains .molk");
                 try
                 {
-                    unMolk.StartInfo.Arguments = $"{fileToUnMolk} -d \"{outputPath}\"";
+                    unMolk.StartInfo.Arguments = $" -j -b {fileToUnMolk} -d \"{outputPath}\"";
                     unMolk.Start();
                     unMolk.WaitForExit();
                 }
