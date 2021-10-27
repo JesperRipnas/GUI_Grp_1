@@ -121,24 +121,8 @@ namespace GUI
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
-            //OpenFileDialog openExplorer = new OpenFileDialog();
-            //openExplorer.Filter = "All files (*.*)|*.*";
-            //openExplorer.Multiselect = true;
-            //openExplorer.InitialDirectory = @"c:\";
-            //openExplorer.ShowDialog();
-
-            //foreach (string s in openExplorer.FileNames)
-            //{
-            //    Filestrings.Add(new Filer(s));
-            //    MessageBox.Show(s);
-            //}
-            //finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
-            ////MessageBox.Show(finalString);
-            ///
-
             MolkWindow mw = new MolkWindow();
             mw.Show();
-
         }
         private void Files_Click(object sender, RoutedEventArgs e)
         {
@@ -181,6 +165,7 @@ namespace GUI
                             } 
                             else
                             {
+                                // Add file as a MolkFile to molkFiles list
                                 molkFiles.Add(new MolkFile
                                 {
                                     fileIndex = molkFiles.Count,
