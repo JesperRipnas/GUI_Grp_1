@@ -64,6 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Utils.cs" />
     <Compile Include="Classes\Filehandler.cs" />
     <Compile Include="Classes\Filer.cs" />
     <Compile Include="Classes\Molka.cs" />
