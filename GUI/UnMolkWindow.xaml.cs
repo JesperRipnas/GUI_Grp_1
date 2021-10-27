@@ -47,7 +47,7 @@ namespace GUI
             if (MainWindow.molkFiles.Count == 1)
             {
                 Molka molka = new Molka();
-                string outPut = MainWindow.defaultOutString;
+                string outPut = molka.GetDefaultOutputPath();
                 molka.UnMolk(MainWindow.finalString, outPut);
                 //MÖLK
             }

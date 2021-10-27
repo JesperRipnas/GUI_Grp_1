@@ -27,7 +27,8 @@ namespace GUI
             // Set common attributes
             molk.StartInfo.CreateNoWindow = false;
             molk.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-            unMolk.StartInfo.CreateNoWindow = true;
+            unMolk.StartInfo.CreateNoWindow = false;
+            unMolk.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
 
             molk.StartInfo.UseShellExecute = false;
             unMolk.StartInfo.UseShellExecute = false;
@@ -69,9 +70,9 @@ namespace GUI
                 MessageBox.Show("Filepath contains .molk");
                 try
                 {
-                    molk.StartInfo.Arguments = $"{fileToUnMolk} -d \"{outputPath}\"";
-                    molk.Start();
-                    molk.WaitForExit();
+                    unMolk.StartInfo.Arguments = $"{fileToUnMolk} -d \"{outputPath}\"";
+                    unMolk.Start();
+                    unMolk.WaitForExit();
                 }
                 catch (Exception err)
                 {
