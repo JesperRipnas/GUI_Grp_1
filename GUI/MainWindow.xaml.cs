@@ -191,5 +191,59 @@ namespace GUI
                 throw;
             }
         }
+
+        public static void OpenExplorerUnMolkFiles()
+        {
+            OpenFileDialog openExplorer = new OpenFileDialog();
+            openExplorer.Filter = "Mölk files (*.molk)|*.molk";
+            openExplorer.Multiselect = true;
+            openExplorer.InitialDirectory = @"c:\";
+            openExplorer.ShowDialog();
+
+            try
+            {
+                if (openExplorer.FileNames != null && openExplorer.FileNames.Length != 0)
+                {
+                    foreach (string file in openExplorer.FileNames)
+                    {
+                        try
+                        {
+                            FileInfo fi = new FileInfo(file);
+
+                            // Check if file already exists in list
+                            if (molkFiles.Any(x => x.filePath == fi.FullName))
+                            {
+                                MessageBox.Show(GeneralError.fileAlreadyExist + "\n" + "File: " + fi.Name);
+                            }
+                            else
+                            {
+                                // Add file as a MolkFile to molkFiles list
+                                molkFiles.Add(new MolkFile
+                                {
+                                    fileIndex = molkFiles.Count,
+                                    fileName = $"{fi.Name}",
+                                    fileSize = $"{fi.Length} bytes",
+                                    fileCreatedDate = $"{fi.CreationTime}",
+                                    fileExtension = $"{fi.Extension}",
+                                    filePath = $"\"{fi.FullName}\""
+                                });
+                                finalString = string.Join(" ", molkFiles.Select(x => x.filePath));
+                                Debug.WriteLine(finalString);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show(e.ToString());
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+                throw;
+            }
+        }
     }
 }

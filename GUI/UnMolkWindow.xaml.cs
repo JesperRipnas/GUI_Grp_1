@@ -35,7 +35,7 @@ namespace GUI
 
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
-            MainWindow.OpenExplorerMolkFiles();
+            MainWindow.OpenExplorerUnMolkFiles();
         }
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
