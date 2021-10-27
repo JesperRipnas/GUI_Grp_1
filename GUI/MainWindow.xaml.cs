@@ -17,6 +17,7 @@ using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
 using GUI.Classes;
+using System.Collections.ObjectModel;
 
 namespace GUI
 {
@@ -28,7 +29,7 @@ namespace GUI
         List<Filer> Filestrings = new List<Filer>();
 
         //WIP Maybe working, maybe not
-        public static List<File> molkFiles = new List<File>();
+        public static ObservableCollection<MolkFile> molkFiles = new ObservableCollection<MolkFile>();
 
         //
         public string finalString { get; set; }
@@ -172,13 +173,18 @@ namespace GUI
                         try
                         {
                             FileInfo fi = new FileInfo(file);
-                            molkFiles.Add(new File { 
-                                fileIndex = molkFiles.Count, 
-                                fileName = $"{fi.Name}", 
-                                fileSize = $"{fi.Length} bytes", 
-                                fileCreatedDate = $"{fi.CreationTime}", 
+                            MolkWindow mw = new MolkWindow();
+
+                            molkFiles.Add(new MolkFile
+                            {
+                                fileIndex = molkFiles.Count,
+                                fileName = $"{fi.Name}",
+                                fileSize = $"{fi.Length} bytes",
+                                fileCreatedDate = $"{fi.CreationTime}",
                                 fileExtension = $"{fi.Extension}",
-                                filePath = $"{fi.FullName}" });
+                                filePath = $"{fi.FullName}"
+                            });
+                            mw.RefreshDataGrid();
                         }
                         catch (Exception e)
                         {
@@ -187,18 +193,12 @@ namespace GUI
                         }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No files picked");
-                }
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.ToString());
                 throw;
             }
-            MolkWindow mw = new MolkWindow();
-            mw.UpdateMolkListData();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace GUI
 {
-    public class File
+    public class MolkFile
     {
         public int fileIndex { get; set; }
         public string fileName { get; set; }

@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Molk Files" Height="450" Width="800" Background="#5f2383">
 
+        <Window.Resources>
+            <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
+        </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -23,7 +27,7 @@
         <StackPanel Grid.Row="2"
                 Grid.ColumnSpan="2"
                 Orientation="Horizontal" Margin="0,84,0,4"/>
-        <DataGrid Name="dtGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="true"
+        <DataGrid Name="dtGrid" DataContext="{StaticResource ItemCollectionViewSource}" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="true"
             Margin="-1,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"

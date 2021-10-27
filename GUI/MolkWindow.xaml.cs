@@ -22,21 +22,18 @@ namespace GUI
         public MolkWindow()
         {
             InitializeComponent();
-            UpdateMolkListDataInternal();
+            CollectionViewSource itemCollectionViewSource;
+            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
+            itemCollectionViewSource.Source = MainWindow.molkFiles;
         }
 
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
             MainWindow.OpenExplorerMolkFiles();
         }
-        private void UpdateMolkListDataInternal()
+        public void RefreshDataGrid()
         {
-            this.dtGrid.ItemsSource = null;
-            this.dtGrid.ItemsSource = MainWindow.molkFiles;
-        }
-        public void UpdateMolkListData()
-        {
-            UpdateMolkListDataInternal();
+            dtGrid.Items.Refresh();
         }
     }
 }
