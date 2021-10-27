@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -51,6 +52,35 @@ namespace GUI
                 MessageBoxImage.Warning
                 );
             }
+        }
+
+        Storyboard storyboard;
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            Color background = ((SolidColorBrush)btn.BorderBrush).Color;
+            storyboard = new Storyboard();
+            storyboard.Children.Add(SetAnimButton(background, btn.Name));
+            storyboard.Begin(this);
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            storyboard = new Storyboard();
+            storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
+            storyboard.Begin(this);
+        }
+
+        public ColorAnimation SetAnimButton(Color Color, string objName)
+        {
+            ColorAnimation anim = new ColorAnimation();
+            anim.Duration = new Duration(TimeSpan.FromSeconds(0.2));
+            anim.To = Color;
+            Storyboard.SetTargetName(anim, objName);
+            Storyboard.SetTargetProperty(anim, new PropertyPath("(Button.Background).(SolidColorBrush.Color)"));
+            return anim;
         }
 
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)

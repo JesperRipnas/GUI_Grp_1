@@ -44,14 +44,14 @@
                                  IsClockwise="True" 
                                  ShowBorder="False" 
                                  ShowPieLines="True">
-                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="ButtonExit_Click" Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Exit" ToolTip="Exit" Style="{StaticResource Button1}" BorderBrush="Red" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="ButtonExit_Click" Background="#FF716E6E" Height="50" Width="50">
                         <Button.OpacityMask>
                             <ImageBrush ImageSource="Resources/Images/door-open-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
-                    <Button x:Name="Files" ToolTip="Scope files" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Files_Click"  Background="#FF716E6E" Height="50" Width="50">
+                    <Button x:Name="Files" ToolTip="Help" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Files_Click"  Background="#FF716E6E" Height="70" Width="50">
                         <Button.OpacityMask>
-                            <ImageBrush ImageSource="Resources/Images/plus-solid.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Resources/Images/question-solid.png" Stretch="UniformToFill"/>
                         </Button.OpacityMask>
                     </Button>
                     <Button x:Name="Unzip" ToolTip="UnMölk file" Style="{StaticResource Button1}" BorderBrush="White" Foreground="{x:Null}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF716E6E" Height="50" Click="btn_unzip" Margin="-31,0,-37,0">
@@ -79,7 +79,7 @@
                         <GradientStop Color="#FF611981" Offset="0.996"/>
                     </RadialGradientBrush>
                 </Grid.Background>
-                <Button x:Name="ButtonExit" Margin="45,45,45,45" Style="{StaticResource Button1}" Click="ButtonExit_Click">
+                <Button x:Name="ButtonExit" Margin="45,45,45,45" Style="{StaticResource Button1}" Click="ButtonMolk_Click" BorderBrush="White"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
                     <Button.Background>
                         <ImageBrush ImageSource="Resources/Images/molk.png"/>
                     </Button.Background>
