@@ -69,7 +69,7 @@ namespace GUI
                 MessageBox.Show("Filepath contains .molk");
                 try
                 {
-                    molk.StartInfo.Arguments = $"{fileToUnMolk} -d {outputPath}";
+                    molk.StartInfo.Arguments = $"{fileToUnMolk} -d \"{outputPath}\"";
                     molk.Start();
                     molk.WaitForExit();
                 }

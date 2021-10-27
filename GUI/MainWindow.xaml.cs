@@ -113,18 +113,8 @@ namespace GUI
         }
         private void btn_unzip(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openExplorer = new OpenFileDialog();
-            openExplorer.Filter = "Molk files (*.Molk) | *.molk";
-            openExplorer.Multiselect = true;
-            openExplorer.InitialDirectory = @"c:\";
-            openExplorer.ShowDialog();
-
-            foreach (string s in openExplorer.FileNames)
-            {
-                Filestrings.Add(new Filer(s));
-                MessageBox.Show(s);
-            }
-            finalString = string.Join(" ", Filestrings.Select(x => x.FilePath));
+            UnMolkWindow umw = new UnMolkWindow();
+            umw.ShowDialog();
         }
         private void btn_zip(object sender, RoutedEventArgs e)
         {
