@@ -18,14 +18,14 @@ namespace GUI
     /// <summary>
     /// Interaction logic for MolkWindow.xaml
     /// </summary>
-    public partial class MolkWindow : Window
+    public partial class UnMolkWindow : Window
     {
-        public MolkWindow()
+        public UnMolkWindow()
         {
             InitializeComponent();
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)FindResource("ItemCollectionViewSource");
-            itemCollectionViewSource.Source = MainWindow.molkFiles;
+            itemCollectionViewSource.Source = MainWindow.unMolkFiles;
         }
 
         private void Btn_Close(object sender, RoutedEventArgs e)
@@ -35,26 +35,25 @@ namespace GUI
 
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
-            MainWindow.OpenExplorerMolkFiles();
+            MainWindow.OpenExplorerUnMolkFiles();
         }
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
             PrefWindow win2 = new PrefWindow();
             win2.ShowDialog();
         }
-        private void Btn_Molk(object sender, RoutedEventArgs e)
+        private void Btn_UnMolk(object sender, RoutedEventArgs e)
         {
-            if(MainWindow.molkFiles.Count > 0)
+            if (MainWindow.unMolkFiles.Count == 1)
             {
                 Molka molka = new Molka();
-                string outPut = MainWindow.defaultOutString;
-                outPut = outPut + "\\archive2.molk";
-                molka.Molk(MainWindow.finalString, outPut);
+                string outPut = molka.GetDefaultOutputPath();
+                molka.UnMolk(MainWindow.finalString, outPut);
                 //MÖLK
             }
             else
             {
-                
+
                 MessageBox.Show(GeneralError.needAtLeastOneFile,
                 "Error: Add file(s)",
                 MessageBoxButton.OK,
@@ -62,7 +61,7 @@ namespace GUI
                 );
             }
         }
-        
+
 
         Storyboard storyboard;
 
@@ -95,18 +94,22 @@ namespace GUI
 
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
-            if (MainWindow.molkFiles.Count > 0)
+            if (MainWindow.unMolkFiles.Count > 0)
             {
                 if (MessageBox.Show(GeneralError.confirmationRemoveFilesInList, "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    MainWindow.molkFiles.Clear();
+                    MainWindow.unMolkFiles.Clear();
                 }
             }
         }
         private void RemoveItem_Press(object sender, RoutedEventArgs e)
         {
-            MainWindow.molkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
+            MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
 
+        private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

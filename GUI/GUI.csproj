@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UnMolkWindow.xaml.cs">
+      <DependentUpon>UnMolkWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrefWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnMolkWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\question-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\box-open-solid-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
