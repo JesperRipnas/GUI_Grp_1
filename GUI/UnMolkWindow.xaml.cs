@@ -32,7 +32,6 @@ namespace GUI
         {
             this.Close();
         }
-
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
             MainWindow.OpenExplorerUnMolkFiles();
@@ -49,12 +48,10 @@ namespace GUI
                 Molka molka = new Molka();
                 string outPut = molka.GetDefaultOutputPath();
                 molka.UnMolk(MainWindow.finalString, outPut);
-                //MÖLK
-                
+                //MOLK         
             }
             else
             {
-
                 MessageBox.Show(GeneralError.needAtLeastOneFile,
                 "Error: Add file(s)",
                 MessageBoxButton.OK,
@@ -62,7 +59,6 @@ namespace GUI
                 );
             }
         }
-
 
         Storyboard storyboard;
 
@@ -74,7 +70,6 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
-
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -82,7 +77,6 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
-
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -92,7 +86,6 @@ namespace GUI
             Storyboard.SetTargetProperty(anim, new PropertyPath("(Button.Background).(SolidColorBrush.Color)"));
             return anim;
         }
-
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count > 0)
@@ -107,7 +100,6 @@ namespace GUI
         {
             MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
-
         private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

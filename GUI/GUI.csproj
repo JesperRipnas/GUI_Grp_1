@@ -69,7 +69,6 @@
     </Compile>
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Classes\Filehandler.cs" />
-    <Compile Include="Classes\Filer.cs" />
     <Compile Include="Classes\Molka.cs" />
     <Compile Include="Classes\RadialPanel.cs" />
     <Compile Include="MainWindow.xaml.cs">

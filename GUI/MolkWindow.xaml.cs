@@ -27,12 +27,10 @@ namespace GUI
             itemCollectionViewSource = (CollectionViewSource)FindResource("ItemCollectionViewSource");
             itemCollectionViewSource.Source = MainWindow.molkFiles;
         }
-
         private void Btn_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
             MainWindow.OpenExplorerMolkFiles();
@@ -50,8 +48,7 @@ namespace GUI
                 string outPut = MainWindow.defaultOutString;
                 outPut = outPut + "\\archive3.molk";
                 molka.Molk(MainWindow.finalString, outPut);
-                //MÖLK
-              
+                //MÖLK             
             }
             else
             {
@@ -64,7 +61,6 @@ namespace GUI
             }
         }
         
-
         Storyboard storyboard;
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
@@ -75,7 +71,6 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
-
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -83,7 +78,6 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
-
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -93,7 +87,6 @@ namespace GUI
             Storyboard.SetTargetProperty(anim, new PropertyPath("(Button.Background).(SolidColorBrush.Color)"));
             return anim;
         }
-
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
             if (MainWindow.molkFiles.Count > 0)
@@ -108,6 +101,5 @@ namespace GUI
         {
             MainWindow.molkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
-
     }
 }

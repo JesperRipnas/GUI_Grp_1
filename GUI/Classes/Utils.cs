@@ -11,8 +11,7 @@ namespace GUI
         public static readonly string fileAlreadyExist = "File already exists, cannot add it twice";
         public static readonly string confirmationRemoveFilesInList = "Are you sure you want to clear the list?";
         public static readonly string needAtLeastOneFile = "You need to add at least one file before mölking";
-        public static readonly string noMolkFilePath = "Filepath doesn't contain .molk";
-        
+        public static readonly string noMolkFilePath = "Filepath doesn't contain .molk";   
     }
     public class SuccsessMessage
     {
