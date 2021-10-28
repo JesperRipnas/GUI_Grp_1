@@ -170,7 +170,7 @@ namespace GUI
                                     fileSize = $"{fi.Length} bytes",
                                     fileCreatedDate = $"{fi.CreationTime}",
                                     fileExtension = $"{fi.Extension}",
-                                    filePath = $"\"{fi.DirectoryName}\""
+                                    filePath = $"\"{fi.FullName}\""
                                 });
                                 finalString = string.Join(" ", molkFiles.Select(x => x.filePath));
                                 Debug.WriteLine(finalString);
@@ -224,7 +224,7 @@ namespace GUI
                                     fileSize = $"{fi.Length} bytes",
                                     fileCreatedDate = $"{fi.CreationTime}",
                                     fileExtension = $"{fi.Extension}",
-                                    filePath = $"\"{fi.DirectoryName}\""
+                                    filePath = $"\"{fi.FullName}\""
                                 });
                                 finalString = string.Join(" ", unMolkFiles.Select(x => x.filePath));
                                 Debug.WriteLine(finalString);
