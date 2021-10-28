@@ -156,7 +156,7 @@ namespace GUI
                             FileInfo fi = new FileInfo(file);
 
                             // Check if file already exists in list
-                            if(molkFiles.Any(x => x.filePath == fi.FullName))
+                            if(molkFiles.Any(x => x.fileName == fi.Name))
                             {
                                 MessageBox.Show(GeneralError.fileAlreadyExist + "\n" + "File: " + fi.Name);
                             }
