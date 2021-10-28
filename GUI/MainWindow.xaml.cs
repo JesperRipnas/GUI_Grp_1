@@ -27,7 +27,6 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Filer> Filestrings = new List<Filer>();
 
         //WIP Maybe working, maybe not
         public static ObservableCollection<MolkFile> molkFiles = new ObservableCollection<MolkFile>();
@@ -124,7 +123,7 @@ namespace GUI
         }
         private void Help_Click(object sender, RoutedEventArgs e)
         {
-            HelpWindow.Text = "THIS IS HELP";
+            HelpWindow.Text = HelpMessage.Help;
             ShowHelp();
         }
 

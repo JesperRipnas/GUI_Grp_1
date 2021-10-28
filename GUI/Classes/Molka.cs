@@ -50,6 +50,8 @@ namespace GUI
                 molk.StartInfo.Arguments = $"\"{archiveNamePath}\" {filesToMolk}";
                 molk.Start();
                 molk.WaitForExit();
+                MessageBox.Show(SuccsessMessage.MolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);
+                MainWindow.molkFiles.Clear();
             }
             catch (Exception err)
             {
@@ -73,6 +75,8 @@ namespace GUI
                     unMolk.StartInfo.Arguments = $" -j -b {fileToUnMolk} -d \"{outputPath}\"";
                     unMolk.Start();
                     unMolk.WaitForExit();
+                    MessageBox.Show(SuccsessMessage.UnmolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow.unMolkFiles.Clear();
                 }
                 catch (Exception err)
                 {
@@ -82,7 +86,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Filepath doesn't contain .molk");
+                MessageBox.Show(GeneralError.noMolkFilePath, Headers.Molkinator);
             }
         }
         public string GetDefaultOutputPath()

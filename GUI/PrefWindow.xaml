@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Background="#5f2383"
+        WindowStartupLocation="CenterScreen" 
         Title="Preferences" Height="400" Width="350" Icon="/Resources/Images/Cogwheel.ico">
     <TabControl HorizontalAlignment="Left" Height="305" Margin="0,1,0,0" VerticalAlignment="Top" Width="340">
         <TabItem Header="General">

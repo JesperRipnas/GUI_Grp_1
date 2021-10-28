@@ -48,9 +48,10 @@ namespace GUI
             {
                 Molka molka = new Molka();
                 string outPut = MainWindow.defaultOutString;
-                outPut = outPut + "\\archive2.molk";
+                outPut = outPut + "\\archive3.molk";
                 molka.Molk(MainWindow.finalString, outPut);
                 //MÖLK
+              
             }
             else
             {

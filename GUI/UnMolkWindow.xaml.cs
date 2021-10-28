@@ -50,6 +50,7 @@ namespace GUI
                 string outPut = molka.GetDefaultOutputPath();
                 molka.UnMolk(MainWindow.finalString, outPut);
                 //MÖLK
+                
             }
             else
             {
