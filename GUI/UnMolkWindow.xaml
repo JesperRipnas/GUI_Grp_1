@@ -34,7 +34,7 @@
 
                 <DataGridTextColumn Header="Name"
                                 Binding="{Binding fileName}"
-                                Width="200"
+                                Width="250"
                                 FontFamily="Times New Roman" />
                 <DataGridTextColumn Header="Type"
                                 Binding="{Binding fileExtension}"
