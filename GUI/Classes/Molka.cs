@@ -43,11 +43,12 @@ namespace GUI
         /// </summary>
         /// <param name="archiveNamePath"></param>
         /// <param name="filesToMolk"></param>
-        public void Molk(string filesToMolk, string archiveNamePath)
+        public void Molk(string filesToMolk, string path)
         {
             try
             {
-                molk.StartInfo.Arguments = $"\"{archiveNamePath}\" {filesToMolk}";
+                molk.StartInfo.Arguments = $"\"{path}\" {filesToMolk}";
+                MessageBox.Show(molk.StartInfo.Arguments);
                 molk.Start();
                 molk.WaitForExit();
                 MessageBox.Show(SuccsessMessage.MolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);

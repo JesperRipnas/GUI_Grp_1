@@ -75,33 +75,33 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-       
-        
-        <Button x:Name="Exit" Style="{StaticResource Button2}" Grid.Row="0" Background="White" BorderThickness="0" Click="Btn_Close" ToolTip="Close" Foreground="{x:Null}" BorderBrush="Red" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/Images/door-open-solid-white.png"/>
-            </Button.OpacityMask>
-        </Button>
-        <Button x:Name="Preferences" Style="{StaticResource Button2}" Grid.Column="2" Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Preferences" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/Images/Gear-solid.png" />
-            </Button.OpacityMask>
-        </Button>
-        <Button x:Name="Throw" Style="{StaticResource Button2}" Grid.Column="3" Background="White" BorderThickness="0" Click="Btn_ClearMolkList" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/Images/trashcan-solid-white.png" />
-            </Button.OpacityMask>
-        </Button>
-        <Button x:Name="Add" Style="{StaticResource Button2}" Grid.Column="4" Background="White" BorderThickness="0" Click="Btn_AddFile" ToolTip="Add file(s)" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/Images/plus-solid-white.png"  />
-            </Button.OpacityMask>
-        </Button>
-        <Button x:Name="Execute" Style="{StaticResource Button2}" Grid.Column="5" Background="White" BorderThickness="0" Click="Btn_Molk" ToolTip="Molk files" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/Images/box-archive-solid-white.png" />
-            </Button.OpacityMask>
-        </Button>
+
+
+            <Button x:Name="Exit" Style="{StaticResource Button2}" Grid.Row="0" Background="White" BorderThickness="0" Click="Btn_Close" ToolTip="Close" Foreground="{x:Null}" BorderBrush="Red" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/door-open-solid-white.png"/>
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Preferences" Style="{StaticResource Button2}" Grid.Column="2" Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Preferences" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/Gear-solid.png" />
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Throw" Style="{StaticResource Button2}" Grid.Column="3" Background="White" BorderThickness="0" Click="Btn_ClearMolkList" ToolTip="Clear list" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/trashcan-solid-white.png" />
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Add" Style="{StaticResource Button2}" Grid.Column="4" Background="White" BorderThickness="0" Click="Btn_AddFile" ToolTip="Add file(s)" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/plus-solid-white.png"  />
+                </Button.OpacityMask>
+            </Button>
+            <Button x:Name="Execute" Style="{StaticResource Button2}" Grid.Column="5" Background="White" BorderThickness="0" Click="Btn_Molk" ToolTip="Molk files" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/box-archive-solid-white.png" />
+                </Button.OpacityMask>
+            </Button>
         </Grid>
     </Grid>
 </Window>

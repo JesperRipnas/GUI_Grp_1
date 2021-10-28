@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MolkPathPickerWindow.xaml.cs">
+      <DependentUpon>MolkPathPickerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnMolkWindow.xaml.cs">
       <DependentUpon>UnMolkWindow.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
     <Compile Include="PrefWindow.xaml.cs">
       <DependentUpon>PrefWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="MolkPathPickerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MolkWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +182,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\MOLKLOGGA %282%29.ico" />
+    <Resource Include="Resources\Images\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\start-black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
