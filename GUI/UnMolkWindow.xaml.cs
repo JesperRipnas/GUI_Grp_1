@@ -20,12 +20,18 @@ namespace GUI
     /// </summary>
     public partial class UnMolkWindow : Window
     {
+        public string outPut { get; set; }
+        private Molka molka;
         public UnMolkWindow()
         {
             InitializeComponent();
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)FindResource("ItemCollectionViewSource");
             itemCollectionViewSource.Source = MainWindow.unMolkFiles;
+            molka = new Molka();
+            outPut = molka.GetDefaultOutputPath();
+            InfoBox.Text = outPut;
+            DataContext = this;
         }
 
         private void Btn_Close(object sender, RoutedEventArgs e)
@@ -45,8 +51,6 @@ namespace GUI
         {
             if (MainWindow.unMolkFiles.Count == 1)
             {
-                Molka molka = new Molka();
-                string outPut = molka.GetDefaultOutputPath();
                 molka.UnMolk(MainWindow.finalString, outPut);
                 //MOLK         
             }
@@ -103,6 +107,22 @@ namespace GUI
         private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Browse_Click(object sender, RoutedEventArgs e)
+        {
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                outPut = dialog.SelectedPath;
+                InfoBox.Text = outPut;
+               
+            }
+            if (outPut == "")
+            {
+                outPut = molka.GetDefaultOutputPath();
+                InfoBox.Text = outPut;
+            }
         }
     }
 }

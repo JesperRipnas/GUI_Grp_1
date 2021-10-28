@@ -34,6 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\allalogga.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -171,6 +175,13 @@
     <Resource Include="Resources\Images\box-open-solid-white.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Images\logo-vit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\allalogga.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MOLKLOGGA %282%29.ico" />
     <Resource Include="Resources\Images\start.png" />
   </ItemGroup>
   <ItemGroup>
