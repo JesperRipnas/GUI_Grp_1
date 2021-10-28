@@ -26,16 +26,12 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="2"
-                Grid.ColumnSpan="2"
-                Orientation="Horizontal" Margin="0,84,0,4"/>
         <DataGrid Name="dtGrid" DataContext="{StaticResource ItemCollectionViewSource}" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="true"
-            Margin="-1,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            Margin="0,0,0,58" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-
                 <DataGridTextColumn Header="Name"
                                 Binding="{Binding fileName}"
-                                Width="200"
+                                Width="250"
                                 FontFamily="Times New Roman" />
                 <DataGridTextColumn Header="Type"
                                 Binding="{Binding fileExtension}"
