@@ -50,8 +50,17 @@ namespace GUI
                 molk.StartInfo.Arguments = $"\"{path}\" {filesToMolk}";
                 molk.Start();
                 molk.WaitForExit();
-                MessageBox.Show(SuccsessMessage.MolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);
-                MainWindow.molkFiles.Clear();
+
+                // Verify that the new archive was created
+                if(File.Exists(path))
+                {
+                    MainWindow.molkFiles.Clear();
+                    MessageBox.Show(SuccsessMessage.MolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show(GeneralError.archivingWasIncomplete, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             catch (Exception err)
             {

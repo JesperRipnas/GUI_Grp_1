@@ -14,6 +14,7 @@ namespace GUI
         public static readonly string noMolkFilePath = "Filepath doesn't contain .molk";
         public static readonly string pickArchiveName = "Please choose a archive name";
         public static readonly string fileAlreadyExistsPleaseChange = "File already exists, choose another archive name or output path";
+        public static readonly string archivingWasIncomplete = "There was a problem archiving, please try again";
     }
     public class SuccsessMessage
     {
