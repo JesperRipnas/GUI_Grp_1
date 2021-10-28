@@ -8,112 +8,74 @@
         Background="#5f2383"
         WindowStartupLocation="CenterScreen" 
         Title="Preferences" Height="400" Width="350" Icon="/Resources/Images/Cogwheel.ico">
-    <TabControl HorizontalAlignment="Left" Height="305" Margin="0,1,0,0" VerticalAlignment="Top" Width="340">
-        <TabItem Header="General">
-            <Grid Background="#FFF">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="249*"/>
-                    <ColumnDefinition Width="249*"/>
-                    <ColumnDefinition Width="249*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
-                    <TextBlock>Language</TextBlock>
-                    <ComboBox>
-                        <ComboBoxItem>Swedish</ComboBoxItem>
-                        <ComboBoxItem>English</ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-                <CheckBox Grid.Row="1" Grid.Column="0" >
-                    General
-                </CheckBox>
-                <CheckBox Grid.Row="0" Grid.Column="1" >
-                    General
-                </CheckBox>
-                <CheckBox Grid.Row="1" Grid.Column="1" >
-                    General
-                </CheckBox>
-                <Button Grid.Row="4" Grid.Column="2" Click="CloseWindow" Width="50" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" ToolTip="Close">
+    <Grid>
+        <Grid Background="#FFF" Margin="0,0,0,44">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TabControl HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Row="0" Height="324" Margin="0,1,0,0" VerticalAlignment="Top" Width="340">
+                <TabItem Header="General">
                     <StackPanel>
-                        <Image Source="Resources/Images/door-open-solid-white.png" />
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="Margin" Value="0,10,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Language"></TextBlock>
+                        <ComboBox>
+                            <ComboBoxItem Content="English"/>
+                            <ComboBoxItem Content="Swedish"/>
+                        </ComboBox>
+                        <CheckBox Content="Setting 1"></CheckBox>
+                        <CheckBox Content="Setting 2"></CheckBox>
+                        <CheckBox Content="Setting 3"></CheckBox>
+                        <CheckBox Content="Setting 4"></CheckBox>
                     </StackPanel>
-                </Button>
-                                    
-            </Grid>
-        </TabItem>
-        <TabItem Header="Compression">
-            <Grid Background="#FFF" Margin="0,7,0,-0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="249*"/>
-                    <ColumnDefinition Width="249*"/>
-                    <ColumnDefinition Width="249*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                </Grid.RowDefinitions>
-                <CheckBox Grid.Row="0" Grid.Column="0" >
-                    Compress Faster
-                </CheckBox>
-                <CheckBox Grid.Row="1" Grid.Column="0" >
-                    Compress Better
-                </CheckBox>
-                <CheckBox Grid.Row="0" Grid.Column="1" >
-                    Compression
-                </CheckBox>
-                <CheckBox Grid.Row="1" Grid.Column="1" >
-                    Compression
-                </CheckBox>
-                <Button Grid.Row="4" Grid.Column="2" Click="CloseWindow" Width="50" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" ToolTip="Close">
+                </TabItem>
+                <TabItem Header="Compression">
                     <StackPanel>
-                        <Image Source="Resources/Images/door-open-solid-white.png" />
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type RadioButton}">
+                                <Setter Property="Margin" Value="0,10,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <RadioButton Content="Compress Faster"/>
+                        <RadioButton Content="Compress Better"/>
+                        <RadioButton Content="Compression Smarter"/>
+                        <RadioButton Content="Compress Cooler"/>
                     </StackPanel>
-                </Button>
-            </Grid>
-        </TabItem>
-        <TabItem Header="Paths">
-            <Grid Background="#FFF" Margin="0,7,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="249*"/>
-                    <ColumnDefinition Width="249*"/>
-                    <ColumnDefinition Width="249*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="25*" />
-                </Grid.RowDefinitions>
-                <CheckBox Grid.Row="0" Grid.Column="0" >
-                    Paths
-                </CheckBox>
-                <CheckBox Grid.Row="1" Grid.Column="0" >
-                    Paths
-                </CheckBox>
-                <CheckBox Grid.Row="0" Grid.Column="1" >
-                    Paths
-                </CheckBox>
-                <CheckBox Grid.Row="1" Grid.Column="1" >
-                    Paths
-                </CheckBox>
-                <Button Grid.Row="4" Grid.Column="2" Click="CloseWindow" Width="50" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" ToolTip="Close">
-                    <StackPanel>
-                        <Image Source="Resources/Images/door-open-solid-white.png" />
+                </TabItem>
+                <TabItem Header="Paths">
+                    <StackPanel >
+                        <TextBlock Text="Change default output path" HorizontalAlignment="Center" Margin="10, 10, 10, 8"/>
+                        <TextBox x:Name="InfoBox" Margin="10,0,10,8" Width="258" FontSize="16"/>
+
+                        <Button Content="Browse" Width="100" Click="Button_Click"/>
                     </StackPanel>
-                </Button>
-            </Grid>
-        </TabItem>
-    </TabControl>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="Exit" Style="{StaticResource Button2}"  Background="White" BorderThickness="0" Click="CloseWindow" ToolTip="Close" Foreground="{x:Null}" BorderBrush="Red" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.Column="1" Margin="131,144,10,10" Grid.Row="1">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="Resources/Images/door-open-solid-white.png"/>
+                </Button.OpacityMask>
+            </Button>
+        </Grid>
+    </Grid>
 </Window>
     
     
