@@ -30,7 +30,6 @@ namespace GUI
 
         private void Btn_Close(object sender, RoutedEventArgs e)
         {
-            MainWindow.molkFiles.Clear();
             this.Close();
         }
 
