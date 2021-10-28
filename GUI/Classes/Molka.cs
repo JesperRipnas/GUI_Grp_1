@@ -25,10 +25,10 @@ namespace GUI
         public Molka()
         {
             // Set common attributes
-            molk.StartInfo.CreateNoWindow = false;
-            molk.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-            unMolk.StartInfo.CreateNoWindow = false;
-            unMolk.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            molk.StartInfo.CreateNoWindow = true;
+            molk.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            unMolk.StartInfo.CreateNoWindow = true;
+            unMolk.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
             molk.StartInfo.UseShellExecute = false;
             unMolk.StartInfo.UseShellExecute = false;
