@@ -85,10 +85,11 @@
                     <ImageBrush ImageSource="Resources/Images/door-open-solid-white.png"/>
                 </Button.OpacityMask>
             </Button>
-            <TextBox x:Name="InfoBox" Grid.Column="1" Height="25" FontSize="17" Width="440" Text="{Binding outPut}" IsReadOnly="True"></TextBox>
-            <Button x:Name="Browse" Content="Browse" Grid.Column="2"  BorderThickness="3" BorderBrush="Black" FontSize="15" Click="Browse_Click" ToolTip="Browse"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Height="26" Width="60">
+            <TextBox Text="Directory" Background="Transparent" Margin="0,-6,369,24" Foreground="White" BorderThickness="0" Grid.Column="1"/>
+            <TextBox x:Name="InfoBox" Grid.Column="1" Height="25" FontSize="17" Width="440" Text="{Binding outPut}" IsReadOnly="True" Margin="1,14,0,9"></TextBox>
+            <Button x:Name="Browse" Content="Browse" Grid.Column="2"  BorderThickness="2" BorderBrush="Black" FontSize="15" Click="Browse_Click" ToolTip="Browse"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Height="26" Width="60" Margin="5,13,23,10">
             </Button>
-            <Button x:Name="Preferences" Style="{StaticResource Button2}" Grid.Column="3"  Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Preferences" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
+            <Button x:Name="Preferences" Style="{StaticResource Button2}" Grid.Column="3" Background="White" BorderThickness="0" Click="ButtonPref_Click" ToolTip="Preferences" Foreground="{x:Null}" BorderBrush="Orange" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" >
                 <Button.OpacityMask>
                     <ImageBrush ImageSource="Resources/Images/Gear-solid.png" />
                 </Button.OpacityMask>
