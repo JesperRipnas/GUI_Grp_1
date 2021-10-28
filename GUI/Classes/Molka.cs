@@ -48,7 +48,6 @@ namespace GUI
             try
             {
                 molk.StartInfo.Arguments = $"\"{path}\" {filesToMolk}";
-                MessageBox.Show(molk.StartInfo.Arguments);
                 molk.Start();
                 molk.WaitForExit();
                 MessageBox.Show(SuccsessMessage.MolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);

@@ -20,7 +20,7 @@
             <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="11*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="archiveName" HorizontalAlignment="center" Height="20" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="center" Width="230" FontFamily="Times New Roman" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="archiveName" HorizontalAlignment="center" Height="20" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="center" Width="230" FontFamily="Times New Roman" Grid.Row="1" Grid.Column="1"/>
         <Label Content="Archive name" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="White"  FontSize="14" Height="35" FontFamily="Times New Roman" Grid.Row="1"/>
         <Label Content="Directory Path" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="White"  FontSize="14" Height="35" FontFamily="Times New Roman" Grid.Row="2"/>
         <TextBox x:Name="directoryPath" HorizontalAlignment="center" Height="20" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="center" Width="230" Grid.Row="2" IsReadOnly="True" FontFamily="Times New Roman" Grid.Column="1"/>
