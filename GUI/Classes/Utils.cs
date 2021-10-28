@@ -22,7 +22,7 @@ namespace GUI
     }
     public class HelpMessage
     {
-        public static readonly string Help = "This is help";
+        public static readonly string Help = "This should be helpful";
 
     }
     public class Headers
