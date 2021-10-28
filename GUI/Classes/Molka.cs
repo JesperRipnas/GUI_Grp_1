@@ -60,10 +60,9 @@ namespace GUI
             }
         }
 
-        public void UnMolk(string fileToUnMolk, string outputPath = null)
+        public void UnMolk(string fileToUnMolk, string outputPath)
         {
             // Check if we got a different output path
-            if (outputPath == null) outputPath = defaultOutputPath;
 
             // Validate that the file type is .molk
             // We should split this and check each element in case a multifile string is passed NIY

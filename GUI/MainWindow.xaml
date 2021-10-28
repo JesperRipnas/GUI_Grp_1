@@ -6,7 +6,7 @@
         xmlns:GUI="clr-namespace:GUI"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500"
+        Title="The Molkinator System" Height="500" Width="500"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
@@ -79,9 +79,9 @@
                         <GradientStop Color="#FF611981" Offset="0.996"/>
                     </RadialGradientBrush>
                 </Grid.Background>
-                <Button x:Name="ButtonExit" Margin="45,45,45,45" Style="{StaticResource Button1}" Click="ButtonMolk_Click" BorderBrush="White"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                <Button x:Name="ButtonExit" Margin="45,73" Style="{StaticResource Button1}" Click="ButtonMolk_Click" BorderBrush="White"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
                     <Button.Background>
-                        <ImageBrush ImageSource="Resources/Images/molk.png"/>
+                        <ImageBrush ImageSource="Resources/Images/logo-vit.png"/>
                     </Button.Background>
                 </Button>
             </Grid>
