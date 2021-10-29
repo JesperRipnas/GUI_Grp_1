@@ -74,7 +74,7 @@ namespace GUI
             {
                 try
                 {
-                    unMolk.StartInfo.Arguments = $" -j -b {fileToUnMolk} -d \"{outputPath}\"";
+                    unMolk.StartInfo.Arguments = $" -j -n -b {fileToUnMolk} -d \"{outputPath}\"";
                     unMolk.Start();
                     unMolk.WaitForExit();
                     MessageBox.Show(SuccsessMessage.UnmolkSuccessMessage, Headers.Molkinator, MessageBoxButton.OK, MessageBoxImage.Information);

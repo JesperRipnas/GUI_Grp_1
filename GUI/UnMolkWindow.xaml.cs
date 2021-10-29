@@ -27,19 +27,23 @@ namespace GUI
             InfoBox.Text = outPut;
             DataContext = this;
         }
+
         private void Btn_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
             MainWindow.OpenExplorerUnMolkFiles();
         }
+
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
             PrefWindow win2 = new PrefWindow();
             win2.ShowDialog();
         }
+
         private void Btn_UnMolk(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count == 1)
@@ -55,6 +59,7 @@ namespace GUI
                 );
             }
         }
+
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -63,6 +68,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
+
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -70,6 +76,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
+
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -79,6 +86,7 @@ namespace GUI
             Storyboard.SetTargetProperty(anim, new PropertyPath("(Button.Background).(SolidColorBrush.Color)"));
             return anim;
         }
+
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count > 0)
@@ -89,10 +97,12 @@ namespace GUI
                 }
             }
         }
+
         private void RemoveItem_Press(object sender, RoutedEventArgs e)
         {
             MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
+
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
