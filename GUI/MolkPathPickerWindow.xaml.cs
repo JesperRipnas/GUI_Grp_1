@@ -1,23 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
-using Microsoft.Win32;
-using System.Diagnostics;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace GUI
 {
@@ -28,6 +15,8 @@ namespace GUI
     {
         private string archivename { get; set; }
         private string output { get; set; }
+        Storyboard storyboard;
+
         public MolkPathPickerWindow()
         {
             InitializeComponent();
@@ -54,6 +43,7 @@ namespace GUI
                 directoryPath.Text = output;
             }
         }
+
         private void Execute_Click(object sender, RoutedEventArgs e)
         {
             // Check if user has entered a archive name or not before going forward
@@ -81,8 +71,6 @@ namespace GUI
             }
         }
 
-        Storyboard storyboard;
-
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -91,6 +79,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
+
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -98,6 +87,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
+
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();

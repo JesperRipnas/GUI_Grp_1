@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GUI
 {
@@ -23,6 +20,7 @@ namespace GUI
         public string outPut { get; set; }
         private Molka molka;
         Storyboard storyboard;
+
         public UnMolkWindow()
         {
             InitializeComponent();
@@ -55,8 +53,7 @@ namespace GUI
         {
             if (MainWindow.unMolkFiles.Count == 1)
             {
-                molka.UnMolk(MainWindow.finalString, outPut);
-                //MOLK         
+                molka.UnMolk(MainWindow.finalString, outPut);     
             }
             else
             {
@@ -76,6 +73,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
+
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -83,6 +81,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
+
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -92,6 +91,7 @@ namespace GUI
             Storyboard.SetTargetProperty(anim, new PropertyPath("(Button.Background).(SolidColorBrush.Color)"));
             return anim;
         }
+
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count > 0)
@@ -102,10 +102,12 @@ namespace GUI
                 }
             }
         }
+
         private void RemoveItem_Press(object sender, RoutedEventArgs e)
         {
             MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
+
         private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e){}
 
         private void Browse_Click(object sender, RoutedEventArgs e)
