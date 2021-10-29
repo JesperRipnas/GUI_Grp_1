@@ -54,10 +54,9 @@ namespace GUI
                 directoryPath.Text = output;
             }
         }
-
         private void Execute_Click(object sender, RoutedEventArgs e)
         {
-            // Need to pick archive name
+            // Check if user has entered a archive name or not before going forward
             if(archiveName.Text != "")
             {
                 // Check so no file with the same archive name already exists on output path to avoid errors
@@ -80,8 +79,6 @@ namespace GUI
             {
                 MessageBox.Show(GeneralError.pickArchiveName, "Error: Archive name", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-
-
         }
 
         Storyboard storyboard;

@@ -21,20 +21,20 @@ namespace GUI
     public partial class PrefWindow : Window
     {
         Molka molka;
+        Storyboard storyboard;
+
         public string Temp { get; set; }
+
         public PrefWindow()
         {
             InitializeComponent();
             molka = new Molka();
             InfoBox.Text = molka.GetDefaultOutputPath();
-             
         }
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-        Storyboard storyboard;
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -44,6 +44,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
+
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -51,6 +52,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
+
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -61,7 +63,6 @@ namespace GUI
             return anim;
         }
 
-        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             

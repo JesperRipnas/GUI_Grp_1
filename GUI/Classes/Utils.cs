@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GUI
 {
+    /// <summary>
+    /// This is just a class to store common strings used in the program
+    /// </summary>
     public class GeneralError
     {
         public static readonly string fileAlreadyExist = "File already exists, cannot add it twice";

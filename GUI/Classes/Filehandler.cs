@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Win32;
-using System.IO;
-using System.Windows;
-
-namespace GUI
+﻿namespace GUI
 {
+    /// <summary>
+    /// Create a MolkFile
+    /// </summary>
     public class MolkFile
     {
         public int fileIndex { get; set; }

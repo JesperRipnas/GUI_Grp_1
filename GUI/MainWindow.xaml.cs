@@ -27,15 +27,17 @@ namespace GUI
     public partial class MainWindow : Window
     {
 
-        //WIP Maybe working, maybe not
+        // Lists to be used for databinding for frontend (XAML) & datagrids
         public static ObservableCollection<MolkFile> molkFiles = new ObservableCollection<MolkFile>();
         public static ObservableCollection<MolkFile> unMolkFiles = new ObservableCollection<MolkFile>();
 
-        //
         public static string finalString { get; set; }
-        // Declare Molka object
-        Molka molka;
         public static string defaultOutString { get; set; }
+
+        // Define objects
+        Molka molka;
+        Storyboard storyboard;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -69,8 +71,6 @@ namespace GUI
         {
             Process.Start("https://www.molk.com/");
         }
-
-        Storyboard storyboard;
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {

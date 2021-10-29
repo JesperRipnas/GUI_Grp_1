@@ -22,6 +22,7 @@ namespace GUI
     {
         public string outPut { get; set; }
         private Molka molka;
+        Storyboard storyboard;
         public UnMolkWindow()
         {
             InitializeComponent();
@@ -38,15 +39,18 @@ namespace GUI
         {
             this.Close();
         }
+
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
             MainWindow.OpenExplorerUnMolkFiles();
         }
+
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
             PrefWindow win2 = new PrefWindow();
             win2.ShowDialog();
         }
+
         private void Btn_UnMolk(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count == 1)
@@ -63,8 +67,6 @@ namespace GUI
                 );
             }
         }
-
-        Storyboard storyboard;
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -104,10 +106,7 @@ namespace GUI
         {
             MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
-        private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e){}
 
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
@@ -116,7 +115,6 @@ namespace GUI
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 outPut = dialog.SelectedPath;
                 InfoBox.Text = outPut;
-               
             }
             if (outPut == "")
             {
