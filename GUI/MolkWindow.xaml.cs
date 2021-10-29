@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
 namespace GUI
 {
     /// <summary>
@@ -20,6 +12,7 @@ namespace GUI
     /// </summary>
     public partial class MolkWindow : Window
     {
+        Storyboard storyboard;
         public MolkWindow()
         {
             InitializeComponent();
@@ -35,11 +28,13 @@ namespace GUI
         {
             MainWindow.OpenExplorerMolkFiles();
         }
+
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
             PrefWindow win2 = new PrefWindow();
             win2.ShowDialog();
         }
+
         private void Btn_Molk(object sender, RoutedEventArgs e)
         {
             if(MainWindow.molkFiles.Count > 0)
@@ -50,7 +45,6 @@ namespace GUI
             }
             else
             {
-                
                 MessageBox.Show(GeneralError.needAtLeastOneFile,
                 "Error: Add file(s)",
                 MessageBoxButton.OK,
@@ -59,8 +53,6 @@ namespace GUI
             }
         }
         
-        Storyboard storyboard;
-
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -69,6 +61,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
+
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -76,6 +69,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
+
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -95,6 +89,7 @@ namespace GUI
                 }
             }
         }
+
         private void RemoveItem_Press(object sender, RoutedEventArgs e)
         {
             MainWindow.molkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);

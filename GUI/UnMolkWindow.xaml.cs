@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GUI
 {
@@ -22,6 +15,8 @@ namespace GUI
     {
         public string outPut { get; set; }
         private Molka molka;
+        Storyboard storyboard;
+
         public UnMolkWindow()
         {
             InitializeComponent();
@@ -38,21 +33,23 @@ namespace GUI
         {
             this.Close();
         }
+
         private void Btn_AddFile(object sender, RoutedEventArgs e)
         {
             MainWindow.OpenExplorerUnMolkFiles();
         }
+
         private void ButtonPref_Click(object sender, RoutedEventArgs e)
         {
             PrefWindow win2 = new PrefWindow();
             win2.ShowDialog();
         }
+
         private void Btn_UnMolk(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count == 1)
             {
-                molka.UnMolk(MainWindow.finalString, outPut);
-                //MOLK         
+                molka.UnMolk(MainWindow.finalString, outPut);     
             }
             else
             {
@@ -64,8 +61,6 @@ namespace GUI
             }
         }
 
-        Storyboard storyboard;
-
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -74,6 +69,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(background, btn.Name));
             storyboard.Begin(this);
         }
+
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -81,6 +77,7 @@ namespace GUI
             storyboard.Children.Add(SetAnimButton(Color.FromRgb(255, 255, 255), btn.Name));
             storyboard.Begin(this);
         }
+
         public ColorAnimation SetAnimButton(Color Color, string objName)
         {
             ColorAnimation anim = new ColorAnimation();
@@ -90,6 +87,7 @@ namespace GUI
             Storyboard.SetTargetProperty(anim, new PropertyPath("(Button.Background).(SolidColorBrush.Color)"));
             return anim;
         }
+
         private void Btn_ClearMolkList(object sender, RoutedEventArgs e)
         {
             if (MainWindow.unMolkFiles.Count > 0)
@@ -100,14 +98,13 @@ namespace GUI
                 }
             }
         }
+
         private void RemoveItem_Press(object sender, RoutedEventArgs e)
         {
             MainWindow.unMolkFiles.Remove((MolkFile)((Button)e.OriginalSource).DataContext);
         }
-        private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
+        private void dtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e){}
 
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
@@ -116,7 +113,6 @@ namespace GUI
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 outPut = dialog.SelectedPath;
                 InfoBox.Text = outPut;
-               
             }
             if (outPut == "")
             {

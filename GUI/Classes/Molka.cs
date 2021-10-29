@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows;
 using System.IO;
@@ -19,9 +15,6 @@ namespace GUI
         // For now, set default output folder to desktop
         private string defaultOutputPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-        /// <summary>
-        /// 
-        /// </summary>
         public Molka()
         {
             // Set common attributes
@@ -39,7 +32,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// Used to molk together files into an *.molk file
+        /// Used to molk (pack) together files into an *.molk file
         /// </summary>
         /// <param name="archiveNamePath"></param>
         /// <param name="filesToMolk"></param>
@@ -60,15 +53,16 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Used to unmolk (unpack) files
+        /// </summary>
+        /// <param name="fileToUnMolk"></param>
+        /// <param name="outputPath"></param>
         public void UnMolk(string fileToUnMolk, string outputPath)
         {
-            // Check if we got a different output path
-
             // Validate that the file type is .molk
-            // We should split this and check each element in case a multifile string is passed NIY
             if (fileToUnMolk.ToLower().Contains(".molk"))
             {
-                //MessageBox.Show("Filepath contains .molk");
                 try
                 {
                     unMolk.StartInfo.Arguments = $" -j -b {fileToUnMolk} -d \"{outputPath}\"";
